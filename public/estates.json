@@ -1,0 +1,124 @@
+[
+  {
+    "id": 1,
+    "estate_title": "Charming Family Home",
+    "segment_name": "single-family home",
+    "description": "This charming single-family home is nestled in a peaceful neighborhood, offering an idyllic retreat for your family. Boasting a spacious floor plan of approximately 2000 square feet, this residence features three cozy bedrooms, two well-appointed bathrooms, and ample living space. The heart of the home is the beautifully renovated kitchen, complete with modern appliances and elegant finishes, perfect for preparing delicious meals and hosting gatherings with loved ones. Step outside to discover a sprawling backyard oasis, ideal for outdoor entertaining and enjoying the sunshine.\n\nLocated at 123 Main Street in Any town, USA, this home is conveniently situated near schools, parks, and shopping centers, providing both comfort and convenience. Whether you're relaxing indoors or exploring the neighborhood, this home offers the perfect blend of charm and functionality for your family's lifestyle.",
+    "price": "$350,000",
+    "status": "Sale",
+    "area": "2000 sq ft",
+    "location": "123 Main Street, Anytown, USA",
+    "facilities": ["living room", "backyard garden", "spacious kitchen"],
+    "image_url": "https://i.ibb.co/WWdkvxh/Family-house.webp"
+  },
+  {
+    "id": 2,
+    "estate_title": "Modern Townhouse",
+    "segment_name": "townhouse",
+    "description": "Experience contemporary urban living in this sleek and stylish townhouse located at 456 Oak Avenue in Suburbia, USA. Spanning approximately 1600 square feet, this modern residence offers two bedrooms, two and a half bathrooms, and a thoughtfully designed open floor plan. The main level welcomes you with a spacious living area, perfect for relaxing or entertaining guests.\n\nThe kitchen features sleek cabinetry, stainless steel appliances, and a convenient breakfast bar, making it a chef's delight. Upstairs, you'll find two generously sized bedrooms, each with its own en-suite bathroom and ample closet space. Other highlights include a private balcony, ideal for enjoying your morning coffee or soaking up the sun.\n\nSituated in a desirable neighborhood, this townhouse offers easy access to local amenities, including shopping centers, restaurants, and parks. Whether you're a first-time buyer or looking to downsize, this modern townhouse offers the perfect blend of style, comfort, and convenience.",
+    "price": "$250,000",
+    "status": "Sale",
+    "area": "1600 sq ft",
+    "location": "456 Oak Avenue, Suburbia, USA",
+    "facilities": ["living room", "community pool", "playground"],
+    "image_url": "https://i.ibb.co/HV1qZRv/townHall.webp"
+  },
+  {
+    "id": 3,
+    "estate_title": "City Center Apartment",
+    "segment_name": "apartment",
+    "description": "Welcome to urban living at its finest! This cozy apartment, located at 789 Elm Street in the heart of City Center, USA, offers the perfect blend of convenience and comfort. Boasting approximately 800 square feet of living space, this one-bedroom, one-bathroom unit features an open floor plan, allowing for seamless transitions between the living, dining, and kitchen areas.\n\nThe kitchen is equipped with modern appliances, ample cabinet space, and a breakfast bar, making it a functional and inviting space for cooking and entertaining. Large windows flood the apartment with natural light, creating a warm and inviting ambiance.\n\nOutside your door, you'll find yourself immersed in the vibrant energy of downtown living. With an array of restaurants, cafes, shops, and entertainment venues just steps away, you'll never run out of things to do.Ideal for young professionals or anyone looking to experience city living at its best, this apartment offers the perfect combination of style, convenience, and affordability.",
+    "price": "$1,500/month",
+    "status": "Rent",
+    "area": "800 sq ft",
+    "location": "789 Elm Street, City Center, USA",
+    "facilities": ["living room", "close to restaurants", "cafes"],
+    "image_url": "https://i.ibb.co/Nyp3xk7/apartments.webp"
+  },
+  {
+    "id": 4,
+    "estate_title": "Student Housing Near Campus",
+    "segment_name": "student housing",
+    "description": "Conveniently located just steps from the university campus, this fully furnished student housing is designed with the needs of students in mind. Offering a comfortable and supportive living environment, this residence provides the perfect balance of privacy, community, and convenience.Featuring four spacious bedrooms and two well-appointed bathrooms, this residence offers plenty of space for studying, relaxing, and socializing. Each room comes fully furnished with a comfortable bed, study desk, and ample storage space, providing everything you need for academic success.In addition to the private bedrooms, residents have access to shared amenities, including a communal living room, kitchen, and laundry facilities. Outside, you'll find a landscaped courtyard, perfect for outdoor gatherings and enjoying the sunshine.With individual leases available and utilities included, this student housing offers hassle-free living for students looking to focus on their studies and make the most of their college experience.",
+    "price": "$700/month (per room)",
+    "status": "Rent",
+    "area": "Varies",
+    "location": "101 University Avenue, College Town, USA",
+    "facilities": ["study lounge", "gym", "furnished rooms"],
+    "image_url": "https://i.ibb.co/MBHwjbv/695-Exterior-773x409.jpg"
+  },
+  {
+    "id": 5,
+    "estate_title": "Senior Living Community",
+    "segment_name": "senior living community",
+    "description": "Discover a vibrant and welcoming community at 321 Maple Lane in Retirement Village, USA. Designed exclusively for seniors, this tranquil living environment offers a range of amenities and services to support an active and fulfilling lifestyle.Choose from a variety of accommodation options, including spacious apartments and cozy cottages, each thoughtfully designed with your comfort and convenience in mind. Whether you're looking for independent living or require a higher level of care, our dedicated team is here to provide personalized support and assistance.Enjoy chef-prepared meals in our elegant dining room, stay active with our fitness programs and wellness classes, and engage in social activities and outings with fellow residents. With beautiful outdoor spaces, including walking paths and gardens, you'll find plenty of opportunities to relax and rejuvenate.Experience the best in senior living at our community, where every day is an opportunity to thrive and enjoy life to the fullest.",
+    "price": " $30,50000",
+    "status": "Sale",
+    "area": "32,00 sq ft",
+    "location": "321 Maple Lane, Retirement Village, USA",
+    "facilities": [
+      "living room",
+      "finished basement",
+      "attached garage",
+      "playground"
+    ],
+    "image_url": "https://i.ibb.co/H4S5993/senior-living.webp"
+  },
+  {
+    "id": 6,
+    "estate_title": "Luxurious Beachfront Vacation Rental",
+    "segment_name": "vacation rental",
+    "description": "Escape to paradise at this luxurious beachfront vacation rental located at 555 Beachfront Drive in Seaside Resort, USA. Nestled along the pristine shores of the ocean, this stunning retreat offers breathtaking views and unparalleled relaxation.Step inside to discover a beautifully appointed interior, featuring spacious living areas, gourmet kitchen, and elegant furnishings. With three bedrooms, two bathrooms, and ample space for entertaining, this rental is perfect for families, couples, or groups of friends seeking a memorable getaway.Outside, you'll find a private balcony overlooking the ocean, where you can sip your morning coffee or watch the sunset in the evening. Take a leisurely stroll along the beach, relax by the pool, or explore the nearby attractions and activities.With luxurious amenities and a prime beachfront location, this vacation rental offers the ultimate retreat for your next escape.",
+    "price": "$250/night",
+    "status": "Rent",
+    "area": "Varies",
+    "location": "555 Beachfront Drive, Seaside Resort, USA",
+    "facilities": [
+      "private balcony",
+      "access to resort",
+      "beachfront location"
+    ],
+    "image_url": "https://i.ibb.co/ng0pBKZ/Golf-Oasis-Pool.jpg"
+  },
+  {
+    "id": 7,
+    "estate_title": "Spacious Family Home with Deck",
+    "segment_name": "single-family home",
+    "description": "Welcome to your spacious family home located at 222 Pine Street, Suburbia, USA. This beautiful residence offers ample room for your growing family, with four bedrooms, three and a half bathrooms, and approximately 2800 square feet of living space.Step inside to discover a warm and inviting interior, featuring a cozy living room, formal dining area, and a recently updated kitchen with granite countertops and stainless steel appliances. The main level also includes a convenient powder room and access to the backyard, where you'll find a large deck, perfect for outdoor entertaining and enjoying summer barbecues.Upstairs, you'll find the master suite with a spacious walk-in closet and en-suite bathroom, along with three additional bedrooms and another full bathroom. The finished basement offers additional living space, perfect for a home office, gym, or playroom.Conveniently located near schools, parks, and shopping centers, this family home offers the perfect blend of comfort and convenience for modern living.",
+    "price": "$450,000",
+    "status": "Sale",
+    "area": "2800 sq ft",
+    "location": "222 Pine Street, Suburbia, USA",
+    "facilities": ["living room", "finished basement", "deck"],
+    "image_url": "https://i.ibb.co/j5ZxRdn/Family-house1.jpg"
+  },
+  {
+    "id": 8,
+    "estate_title": "Modern High-rise Apartment",
+    "segment_name": "apartment",
+    "description": "Experience luxury living in the heart of the city at this modern high-rise apartment located at 777 Broadway Avenue, Urban Center, USA. Boasting stunning panoramic views of the skyline, this stylish residence offers the ultimate urban retreat.\n\nStep inside to discover a thoughtfully designed interior, featuring floor-to-ceiling windows, sleek hardwood floors, and high-end finishes throughout. The open-concept living area seamlessly flows into the gourmet kitchen, equipped with stainless steel appliances, quartz countertops, and a spacious island with bar seating.\n\nThe apartment also includes two bedrooms, two bathrooms, and a private balcony, where you can enjoy your morning coffee or unwind after a long day. Residents have access to a range of amenities, including a rooftop terrace, fitness center, and concierge services.\n\nLocated within walking distance of restaurants, shops, and entertainment venues, this modern apartment offers the perfect combination of style, convenience, and sophistication.\n",
+    "price": "$2,000/month",
+    "status": "Rent",
+    "area": "1200 sq ft",
+    "location": "777 Broadway Avenue, Urban Center, USA",
+    "facilities": [
+      "floor-to-ceiling windows",
+      "rooftop terrace",
+      "fitness center"
+    ],
+    "image_url": "https://i.ibb.co/CJv6F7Y/Modern-home.webp"
+  },
+
+  {
+    "id": 9,
+    "estate_title": "Well-maintained Townhouse with Garage",
+    "segment_name": "townhouse",
+    "description": "Discover the perfect blend of comfort and convenience in this well-maintained townhouse located at 888 Maple Street, Suburbia, USA. Offering three bedrooms, two and a half bathrooms, and approximately 1800 square feet of living space, this home is ideal for modern living.\n\nThe main level features a spacious living room, formal dining area, and a fully equipped kitchen with ample cabinet space and stainless steel appliances. Upstairs, you'll find the master suite with a private en-suite bathroom, along with two additional bedrooms and another full bathroom.\n\nOutside, you'll find a private patio, perfect for outdoor dining and entertaining, as well as an attached garage for convenient parking. Residents also have access to community amenities, including a clubhouse, tennis courts, and walking trails.\n\nLocated close to schools, parks, and shopping centers, this townhouse offers the perfect combination of comfort and convenience for your family's lifestyle.\n",
+    "price": "$300,000",
+    "status": "Sale",
+    "area": "1800 sq ft",
+    "location": "888 Maple Street, Suburbia, USA",
+    "facilities": ["living room", "attached garage", "community clubhouse"],
+    "image_url": "https://i.ibb.co/TR03QfL/well.webp"
+  }
+]
