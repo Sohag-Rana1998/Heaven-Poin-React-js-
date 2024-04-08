@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "img": "https://i.ibb.co/F8GBRrC/testimonial-1.webp",
+    "author": "Emma Johnson",
+    "author_designation": "Real Estate Investor",
+    "review": "Exceptional service from this real estate agency. Their expertise and dedication made my home buying experience stress-free. Highly recommend their professional team for anyone looking to find their dream home.",
+    "rating": 5
+  },
+  {
+    "id": 2,
+    "img": "https://i.ibb.co/k1kMsBD/testimonials6-1.webp",
+    "author": "Sophia Brown",
+    "author_designation": "Home Buyer",
+    "review": "Wonderful experience with this agency. They helped me find the perfect home for my family. Their expertise in the local market was evident, making the home buying process smooth and stress-free.",
+    "rating": 4.5
+  },
+  {
+    "id": 3,
+    "img": "https://i.ibb.co/3kn17dy/testimonial.webp",
+    "author": "Olivia Smith",
+    "author_designation": "Property Developer",
+    "review": "Working with this agency has been a game-changer. Their understanding of the market helped me find lucrative investment opportunities. Reliable, professional, and committed to delivering results.",
+    "rating": 4.8
+  },
+  {
+    "id": 4,
+    "img": "https://i.ibb.co/6rC150z/testimonial1-1.webp",
+    "author": "Ava Wilson",
+    "author_designation": "First-time Home Buyer",
+    "review": "Nervous about the process, but this agency made it incredibly easy. They helped me find a home that I absolutely love. Their guidance and support were invaluable.",
+    "rating": 4.7
+  },
+  {
+    "id": 5,
+    "img": "https://i.ibb.co/fGTxqXF/testimonial4-1.webp",
+    "author": "Isabella Taylor",
+    "author_designation": "Real Estate Enthusiast",
+    "review": "Impressed by this agency's attention to detail and dedication to client satisfaction. Whether buying, selling, or investing, I highly recommend giving them a call.",
+    "rating": 4.9
+  },
+  {
+    "id": 6,
+    "img": "https://i.ibb.co/cQwMJnH/testimonial5-1.webp",
+    "author": "Charlotte Anderson",
+    "author_designation": "Satisfied Home Seller",
+    "review": "Selling my home was a breeze with this agency. Their professionalism and expertise ensured a quick and profitable sale. Couldn't be happier with the outcome.",
+    "rating": 4.6
+  }
+]
