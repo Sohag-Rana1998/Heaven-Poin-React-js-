@@ -4,7 +4,10 @@ import NavBar from '../Pages/Shared/Navbar/NavBar';
 const Root = () => {
   return (
     <div className="max-w-7xl container mx-auto">
-      <NavBar></NavBar>
+      <div className="   z-20">
+        <NavBar></NavBar>
+      </div>
+
       <Outlet></Outlet>
     </div>
   );

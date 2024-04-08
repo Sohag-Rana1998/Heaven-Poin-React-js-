@@ -1,5 +1,5 @@
 import { Avatar, Typography } from '@material-tailwind/react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const NavBar = () => {
   const Links = (
@@ -78,7 +78,7 @@ const NavBar = () => {
   );
 
   return (
-    <div className="navbar max-w-7xl container  mx-auto  bg-base-100 font-work">
+    <div className="navbar max-w-7xl container  mx-auto z-20">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -103,7 +103,12 @@ const NavBar = () => {
           >
             {Links}
             <div className="navbar-end">
-              <a className="btn bg-[#23BE0A]  text-white">Log In</a>
+              <Link to={'/login'}>
+                {' '}
+                <button className="btn bg-[#23BE0A] mr-3 text-white">
+                  Log In
+                </button>
+              </Link>
               <div className="flex items-center gap-4">
                 <Avatar
                   src="https://docs.material-tailwind.com/img/face-2.jpg"
@@ -132,7 +137,10 @@ const NavBar = () => {
       </div>
 
       <div className="navbar-end -top-52 relative md:static lg:static">
-        <a className="btn bg-[#23BE0A] mr-3 text-white">Log In</a>
+        <Link to={'/login'}>
+          {' '}
+          <button className="btn bg-[#23BE0A] mr-3 text-white">Log In</button>
+        </Link>
         <div className="flex items-center gap-4">
           <Avatar
             src="https://docs.material-tailwind.com/img/face-2.jpg"
