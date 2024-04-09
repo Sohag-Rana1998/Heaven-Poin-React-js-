@@ -6,8 +6,10 @@ import {
   Button,
 } from '@material-tailwind/react';
 import { FaLocationDot } from 'react-icons/fa6';
+import { Link } from 'react-router-dom';
 const SingleProperty = ({ estate }) => {
   const {
+    id,
     estate_title,
     segment_name,
     price,
@@ -50,7 +52,7 @@ const SingleProperty = ({ estate }) => {
             </p>
           </div>
         </CardHeader>
-        <CardBody className="flex flex-col justify-between h-auto md:h-[400px] lg:h-[350px]">
+        <CardBody className="flex flex-col  justify-between h-auto md:h-[400px] ">
           <div>
             <div>
               <Typography variant="h4" color="blue-gray">
@@ -95,12 +97,14 @@ const SingleProperty = ({ estate }) => {
 
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mt-3">
             <h3 className=" text-xl text-blue-600  font-bold ">{price}</h3>
-            <Button
-              size="md"
-              className="bg-blue-600 w-full md:w-auto text-white font-bold"
-            >
-              View Property
-            </Button>
+            <Link to={`/view-property/${id}`}>
+              <Button
+                size="md"
+                className="bg-blue-600 w-full md:w-auto text-white font-bold"
+              >
+                View Property
+              </Button>
+            </Link>
           </div>
         </CardBody>
       </Card>

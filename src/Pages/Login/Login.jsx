@@ -1,10 +1,14 @@
 import { Link } from 'react-router-dom';
 
 import { Button } from '@material-tailwind/react';
+import { Helmet } from 'react-helmet-async';
 
 const Login = () => {
   return (
     <div className="flex flex-col justify-between items-center h-screen">
+      <Helmet>
+        <title>Heavens Hub || Login</title>
+      </Helmet>
       <div className="flex flex-col max-w-lg container p-20 rounded-md   bg-gray-50 text-gray-800">
         <div className="mb-4 text-center">
           <h1 className="my-3 text-4xl font-bold">Log in</h1>

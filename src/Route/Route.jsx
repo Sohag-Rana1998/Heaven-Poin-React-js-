@@ -4,6 +4,7 @@ import ErrorPage from '../Pages/ErrorPage/ErrorPage';
 import Home from '../Pages/Home/Home';
 import Login from '../Pages/Login/Login';
 import Register from '../Pages/Register/Register';
+import ViewDetails from '../Pages/ViewDetails/ViewDetails';
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,11 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register></Register>,
+      },
+      {
+        path: '/view-property/:id',
+        element: <ViewDetails></ViewDetails>,
+        loader: () => fetch(`/details.json`),
       },
     ],
   },
