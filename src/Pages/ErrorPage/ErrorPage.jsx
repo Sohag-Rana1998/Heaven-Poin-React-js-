@@ -15,13 +15,12 @@ const ErrorPage = () => {
             But dont worry, you can find plenty of other things on our homepage.
           </p>
           <Link to={'/'}>
-            {' '}
-            <a
+            <button
               rel="noopener noreferrer"
-              className="px-8 py-3 font-semibold rounded bg-gray-400 dark:text-gray-50"
+              className="px-8 py-3 btn font-semibold rounded bg-gray-400 dark:text-gray-50"
             >
               Back to homepage
-            </a>
+            </button>
           </Link>
         </div>
       </div>

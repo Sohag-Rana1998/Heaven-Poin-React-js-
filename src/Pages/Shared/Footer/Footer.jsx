@@ -31,14 +31,14 @@ const Footer = () => {
         <div className="">
           <div className="flex flex-col md:flex-row justify-between items-center text-center ">
             <div className="text-3xl font-bold text-light-blue-600">
-              Heavens Hub
+              RESIDENCE HUB
             </div>
             <div className="mx-auto grid w-full grid-cols-2 gap-8 py-12 md:grid-cols-2 lg:grid-cols-3">
               {SITEMAP.map(({ title, links }, key) => (
                 <div key={key} className="w-full">
                   <Typography
                     variant="small"
-                    color="text-white"
+                    color="white"
                     className="mb-4 text-lg font-bold uppercase !text-white "
                   >
                     {title}
@@ -48,7 +48,7 @@ const Footer = () => {
                       <Typography
                         key={key}
                         as="li"
-                        color="text-white"
+                        color="white"
                         className="font-normal"
                       >
                         <a
@@ -70,7 +70,7 @@ const Footer = () => {
               className="mb-4 text-center font-normal text-white md:mb-0"
             >
               &copy; {currentYear}{' '}
-              <a href="https://material-tailwind.com/">Heavens Hub</a>. All
+              <a href="https://material-tailwind.com/">RESIDENCE HUB</a>. All
               Rights Reserved.
             </Typography>
             <div className="flex gap-4 text-white sm:justify-center">

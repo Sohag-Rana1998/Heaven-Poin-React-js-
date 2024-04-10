@@ -7,8 +7,9 @@ import {
   Typography,
 } from '@material-tailwind/react';
 import { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { FaLocationDot } from 'react-icons/fa6';
-import { Link, useLoaderData, useParams } from 'react-router-dom';
+import { useLoaderData, useParams } from 'react-router-dom';
 
 const ViewDetails = () => {
   const { id } = useParams();
@@ -36,6 +37,9 @@ const ViewDetails = () => {
   } = estate;
   return (
     <div className="my-8 md:my-16">
+      <Helmet>
+        <title>RESIDENCE HUB || Details </title>
+      </Helmet>
       <div className="h-[150px] w-full rounded-xl bg-[url(https://i.ibb.co/PtcPs7P/6.jpg)] text-center mb-10  bg-no-repeat bg-center bg-opacity-10">
         <div className="h-[150px] w-full rounded-xl flex items-center justify-center bg-black bg-opacity-30">
           <h1 className="text-4xl font-bold text-white">Property Details</h1>

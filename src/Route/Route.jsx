@@ -5,6 +5,7 @@ import Home from '../Pages/Home/Home';
 import Login from '../Pages/Login/Login';
 import Register from '../Pages/Register/Register';
 import ViewDetails from '../Pages/ViewDetails/ViewDetails';
+import UpdateProfile from '../Pages/UpdateProfile/UpdateProfile';
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
         path: '/view-property/:id',
         element: <ViewDetails></ViewDetails>,
         loader: () => fetch(`/details.json`),
+      },
+      {
+        path: '/update-profile',
+        element: <UpdateProfile></UpdateProfile>,
       },
     ],
   },

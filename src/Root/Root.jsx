@@ -1,10 +1,14 @@
 import { Outlet } from 'react-router-dom';
 import NavBar from '../Pages/Shared/Navbar/NavBar';
 import Footer from '../Pages/Shared/Footer/Footer';
+import { Helmet } from 'react-helmet-async';
 
 const Root = () => {
   return (
     <div className="max-w-8xl container mx-auto flex flex-col justify-between min-h-screen">
+      <Helmet>
+        <title>RESIDENCE HUB</title>
+      </Helmet>
       <div className="max-w-7xl container mx-auto">
         <div className="">
           <NavBar></NavBar>

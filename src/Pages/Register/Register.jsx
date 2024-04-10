@@ -1,13 +1,43 @@
 import { Link } from 'react-router-dom';
 
+import 'react-toastify/dist/ReactToastify.css';
 import { Button } from '@material-tailwind/react';
 import { Helmet } from 'react-helmet-async';
-
+import { useContext, useState } from 'react';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
+import { ToastContainer, toast } from 'react-toastify';
+import { IoEye, IoEyeOff } from 'react-icons/io5';
+import { FaGithub } from 'react-icons/fa6';
 const Register = () => {
+  const [type, setType] = useState(false);
+  const { createUserByEmailAndPassword } = useContext(AuthContext);
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    const name = e.target.name.value;
+    const photo = e.target.photo.value;
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    if (!/[A-Z]/.test(password)) {
+      toast.warn('Your Password should have one uppercase letter.');
+      return;
+    } else if (!/[a-z]/.test(password)) {
+      toast.warn('Your Password should have one lowercase letter.');
+      return;
+    } else if (password.length < 6) {
+      toast.warn('Password Must be minimum 06 character.');
+      return;
+    }
+    console.log(name, email, photo, password);
+
+    createUserByEmailAndPassword(name, photo, email, password);
+  };
+
   return (
-    <div className="flex flex-col justify-between items-center h-screen">
+    <div className="flex flex-col justify-between items-center">
       <Helmet>
-        <title>Heavens Hub || Login</title>
+        <title>RESIDENCE HUB || REGISTER</title>
       </Helmet>
       <div className="flex flex-col max-w-lg w-full p-16 rounded-md  bg-gray-50 text-gray-800">
         <div className="mb-4 text-center">
@@ -16,7 +46,7 @@ const Register = () => {
             Register to access all of our features...
           </p>
         </div>
-        <form noValidate="" action="" className="space-y-5">
+        <form onSubmit={handleSubmit} className="space-y-5">
           <div className="space-y-4">
             <div>
               <label htmlFor="name" className="block mb-2 text-sm">
@@ -52,7 +82,7 @@ const Register = () => {
                 id="email"
                 placeholder="Email address"
                 className="w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-50 text-gray-800"
-              />
+              />{' '}
             </div>
             <div>
               <div className="flex justify-between mb-2">
@@ -67,23 +97,35 @@ const Register = () => {
                   Forgot password?
                 </a>
               </div>
-              <input
-                type="password"
-                name="password"
-                id="password"
-                placeholder="password"
-                className="w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-50 text-gray-800"
-              />
+              <div className="relative">
+                <input
+                  type={type ? 'text' : 'password'}
+                  name="password"
+                  id="password"
+                  placeholder="password"
+                  className="w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-50 text-gray-800"
+                  required
+                />
+                <span
+                  className="absolute right-5 top-2 "
+                  onClick={() => setType(!type)}
+                >
+                  {type ? (
+                    <IoEye className="text-2xl" />
+                  ) : (
+                    <IoEyeOff className="text-2xl" />
+                  )}
+                </span>{' '}
+              </div>
             </div>
           </div>
           <div className="space-y-2">
             <div>
-              <button
-                type="button"
+              <input
+                type="submit"
+                value="Register"
                 className="w-full px-8 py-3 font-semibold rounded-md bg-blue-600 text-gray-50"
-              >
-                Register
-              </button>
+              />
             </div>
             <p className="px-6 text-sm text-center text-gray-600">
               Already have an account yet?
@@ -121,17 +163,14 @@ const Register = () => {
             color="light-blue"
             className="group relative flex w-full py-4 items-center gap-3 overflow-hidden pr-[72px]"
           >
-            Sign Up with Twitter
+            CONTINUE with Github
             <span className="absolute right-0 grid h-full w-12 place-items-center bg-light-blue-600 transition-colors group-hover:bg-light-blue-700">
-              <img
-                src="https://docs.material-tailwind.com/icons/twitter.svg"
-                alt="metamask"
-                className="h-6 w-6"
-              />
+              <FaGithub className="text-4xl" />
             </span>
           </Button>
         </div>
       </div>
+      <ToastContainer></ToastContainer>
     </div>
   );
 };

@@ -2,12 +2,27 @@ import { Link } from 'react-router-dom';
 
 import { Button } from '@material-tailwind/react';
 import { Helmet } from 'react-helmet-async';
+import { useContext, useState } from 'react';
+import { IoEye, IoEyeOff } from 'react-icons/io5';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Login = () => {
+  const [type, setType] = useState(false);
+  const { signInWithEmail } = useContext(AuthContext);
+  const handleLogIn = e => {
+    e.preventDefault();
+
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    console.log(email, password);
+
+    signInWithEmail(email, password);
+  };
+
   return (
-    <div className="flex flex-col justify-between items-center h-screen">
+    <div className="flex flex-col justify-between items-center ">
       <Helmet>
-        <title>Heavens Hub || Login</title>
+        <title>RESIDENCE HUB || Login</title>
       </Helmet>
       <div className="flex flex-col max-w-lg container p-20 rounded-md   bg-gray-50 text-gray-800">
         <div className="mb-4 text-center">
@@ -16,7 +31,12 @@ const Login = () => {
             Log in to access your account
           </p>
         </div>
-        <form noValidate="" action="" className="space-y-6">
+        <form
+          onSubmit={handleLogIn}
+          noValidate=""
+          action=""
+          className="space-y-6"
+        >
           <div className="space-y-4">
             <div>
               <label htmlFor="email" className="block mb-2 text-sm">
@@ -43,23 +63,35 @@ const Login = () => {
                   Forgot password?
                 </a>
               </div>
-              <input
-                type="password"
-                name="password"
-                id="password"
-                placeholder="Password"
-                className="w-full px-3 py-2 border rounded-md border-gray-300 dark:bg-gray-50 text-gray-800"
-              />
+              <div className="relative">
+                <input
+                  type={type ? 'text' : 'password'}
+                  name="password"
+                  id="password"
+                  placeholder="password"
+                  className="w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-50 text-gray-800"
+                  required
+                />
+                <span
+                  className="absolute right-5 top-2 "
+                  onClick={() => setType(!type)}
+                >
+                  {type ? (
+                    <IoEye className="text-2xl" />
+                  ) : (
+                    <IoEyeOff className="text-2xl" />
+                  )}
+                </span>{' '}
+              </div>
             </div>
           </div>
           <div className="space-y-2">
             <div>
-              <button
-                type="button"
+              <input
+                type="submit"
+                value="Log In"
                 className="w-full px-8 py-3 font-semibold rounded-md bg-blue-600 text-gray-50"
-              >
-                Sign in
-              </button>
+              />
             </div>
             <p className="px-6 text-sm text-center text-gray-600">
               Don&apos;t have an account yet?
