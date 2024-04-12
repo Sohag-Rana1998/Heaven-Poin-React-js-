@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import 'react-toastify/dist/ReactToastify.css';
 import { Button } from '@material-tailwind/react';
@@ -8,10 +8,14 @@ import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 import { IoEye, IoEyeOff } from 'react-icons/io5';
 import { FaGithub } from 'react-icons/fa6';
+import Swal from 'sweetalert2';
+import { getAuth, updateProfile } from 'firebase/auth';
+import app from '../../FireBase/firebase.config';
 const Register = () => {
   const [type, setType] = useState(false);
-  const { createUserByEmailAndPassword } = useContext(AuthContext);
-
+  const { createUserByEmailAndPassword, signInWithGithub, signInWithGoogle } =
+    useContext(AuthContext);
+  const auth = getAuth(app);
   const handleSubmit = e => {
     e.preventDefault();
     const name = e.target.name.value;
@@ -31,7 +35,84 @@ const Register = () => {
     }
     console.log(name, email, photo, password);
 
-    createUserByEmailAndPassword(name, photo, email, password);
+    createUserByEmailAndPassword(email, password)
+      .then(() => {
+        updateProfile(auth.currentUser, {
+          displayName: name,
+          photoURL: photo,
+        })
+          .then(() => {
+            location.reload();
+          })
+          .catch(error => {
+            console.error(error);
+          });
+
+        navigate('/');
+
+        Swal.fire({
+          icon: 'success',
+          title: 'Congratulation! Your account is registered successfully',
+          showConfirmButton: true,
+        });
+      })
+      .catch(error => {
+        console.error(error.message);
+        Swal.fire({
+          icon: 'error',
+          title: error.message,
+          showConfirmButton: false,
+          timer: 2000,
+        });
+      });
+  };
+
+  const navigate = useNavigate();
+  console.log(navigate);
+  const handleGoogleLogin = () => {
+    signInWithGoogle()
+      .then(result => {
+        console.log(result.user);
+        navigate('/');
+        Swal.fire({
+          icon: 'success',
+          title: 'Log In successful',
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      })
+      .catch(error => {
+        console.error(error);
+        Swal.fire({
+          icon: 'error',
+          title:
+            'Something went wrong. Please provide a registered email and password.',
+          showConfirmButton: true,
+        });
+      });
+  };
+  const handleGithubLogin = () => {
+    signInWithGithub()
+      .then(result => {
+        console.log(result.user);
+        navigate('/');
+
+        Swal.fire({
+          icon: 'success',
+          title: 'Log In successful',
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      })
+      .catch(error => {
+        console.error(error);
+        Swal.fire({
+          icon: 'error',
+          title:
+            'Something went wrong. Please provide a registered email and password.',
+          showConfirmButton: true,
+        });
+      });
   };
 
   return (
@@ -39,7 +120,7 @@ const Register = () => {
       <Helmet>
         <title>RESIDENCE HUB || REGISTER</title>
       </Helmet>
-      <div className="flex flex-col max-w-lg w-full p-16 rounded-md  bg-gray-50 text-gray-800">
+      <div className="flex flex-col max-w-lg w-full p-5 md:p-16 rounded-md  bg-gray-50 text-gray-800">
         <div className="mb-4 text-center">
           <h1 className="my-3 text-4xl font-bold">Register Now</h1>
           <p className="text-sm text-gray-600">
@@ -85,7 +166,7 @@ const Register = () => {
               />{' '}
             </div>
             <div>
-              <div className="flex justify-between mb-2">
+              <div className="flex  justify-between mb-2">
                 <label htmlFor="password" className="text-sm">
                   Password
                 </label>
@@ -131,7 +212,7 @@ const Register = () => {
               Already have an account yet?
               <Link to={'/login'}>
                 {' '}
-                <button className="hover:underline text-blue-600">
+                <button className="hover:underline font-bold text-xl text-blue-600">
                   Log In
                 </button>
               </Link>
@@ -145,6 +226,7 @@ const Register = () => {
         </div>
         <div className="flex flex-col items-center gap-4">
           <Button
+            onClick={handleGoogleLogin}
             size="lg"
             variant="outlined"
             color="blue-gray"
@@ -158,6 +240,7 @@ const Register = () => {
             Continue with Google
           </Button>
           <Button
+            onClick={handleGithubLogin}
             size="lg"
             variant="gradient"
             color="light-blue"

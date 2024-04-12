@@ -1,14 +1,26 @@
-import { Link } from 'react-router-dom';
+import {
+  Link,
+  ScrollRestoration,
+  useLocation,
+  useNavigate,
+} from 'react-router-dom';
 
 import { Button } from '@material-tailwind/react';
 import { Helmet } from 'react-helmet-async';
 import { useContext, useState } from 'react';
 import { IoEye, IoEyeOff } from 'react-icons/io5';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import { reload } from 'firebase/auth';
+import Swal from 'sweetalert2';
+import { FaGithub } from 'react-icons/fa6';
 
 const Login = () => {
   const [type, setType] = useState(false);
-  const { signInWithEmail } = useContext(AuthContext);
+  const { signInWithEmail, signInWithGoogle, signInWithGithub } =
+    useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+  console.log(location);
   const handleLogIn = e => {
     e.preventDefault();
 
@@ -16,7 +28,75 @@ const Login = () => {
     const password = e.target.password.value;
     console.log(email, password);
 
-    signInWithEmail(email, password);
+    signInWithEmail(email, password)
+      .then(result => {
+        console.log(result.user);
+        reload();
+
+        Swal.fire({
+          icon: 'success',
+          title: 'Log In successful',
+          showConfirmButton: false,
+          timer: 1500,
+        });
+
+        navigate(location?.state || '/');
+      })
+      .catch(error => {
+        console.error(error);
+        Swal.fire({
+          icon: 'error',
+          title:
+            'Something went wrong. Please provide a registered email and password.',
+          showConfirmButton: true,
+        });
+      });
+  };
+  const handleGoogleLogin = () => {
+    signInWithGoogle()
+      .then(result => {
+        console.log(result.user);
+
+        navigate(location?.state || '/');
+        Swal.fire({
+          icon: 'success',
+          title: 'Log In successful',
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      })
+      .catch(error => {
+        console.error(error);
+        Swal.fire({
+          icon: 'error',
+          title:
+            'Something went wrong. Please provide a registered email and password.',
+          showConfirmButton: true,
+        });
+      });
+  };
+  const handleGithubLogin = () => {
+    signInWithGithub()
+      .then(result => {
+        console.log(result.user);
+
+        navigate(location?.state || '/');
+        Swal.fire({
+          icon: 'success',
+          title: 'Log In successful',
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      })
+      .catch(error => {
+        console.error(error);
+        Swal.fire({
+          icon: 'error',
+          title:
+            'Something went wrong. Please provide a registered email and password.',
+          showConfirmButton: true,
+        });
+      });
   };
 
   return (
@@ -24,7 +104,7 @@ const Login = () => {
       <Helmet>
         <title>RESIDENCE HUB || Login</title>
       </Helmet>
-      <div className="flex flex-col max-w-lg container p-20 rounded-md   bg-gray-50 text-gray-800">
+      <div className="flex flex-col max-w-lg container p-5 md:p-20 rounded-md   bg-gray-50 text-gray-800">
         <div className="mb-4 text-center">
           <h1 className="my-3 text-4xl font-bold">Log in</h1>
           <p className="text-sm dark:text-gray-600">
@@ -96,11 +176,10 @@ const Login = () => {
             <p className="px-6 text-sm text-center text-gray-600">
               Don&apos;t have an account yet?
               <Link to={'/register'}>
-                {' '}
                 <button
                   rel="noopener noreferrer"
                   href="#"
-                  className="hover:underline text-violet-600"
+                  className="hover:underline font-bold text-xl text-violet-600"
                 >
                   Sign up
                 </button>
@@ -116,6 +195,7 @@ const Login = () => {
         </div>
         <div className="flex flex-col items-center gap-4">
           <Button
+            onClick={handleGoogleLogin}
             size="lg"
             variant="outlined"
             color="blue-gray"
@@ -129,22 +209,20 @@ const Login = () => {
             Continue with Google
           </Button>
           <Button
+            onClick={handleGithubLogin}
             size="lg"
             variant="gradient"
             color="light-blue"
             className="group relative flex w-full py-4 items-center gap-3 overflow-hidden pr-[72px]"
           >
-            Sign in with Twitter
+            CONTINUE with Github
             <span className="absolute right-0 grid h-full w-12 place-items-center bg-light-blue-600 transition-colors group-hover:bg-light-blue-700">
-              <img
-                src="https://docs.material-tailwind.com/icons/twitter.svg"
-                alt="metamask"
-                className="h-6 w-6"
-              />
+              <FaGithub className="text-4xl" />
             </span>
           </Button>
         </div>
       </div>
+      <ScrollRestoration />
     </div>
   );
 };

@@ -1,23 +1,67 @@
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
-import { FaUserCircle } from 'react-icons/fa';
+
+import { Helmet } from 'react-helmet-async';
+import { getAuth, updateProfile } from 'firebase/auth';
+import app from '../../FireBase/firebase.config';
+import Swal from 'sweetalert2';
+import { ScrollRestoration } from 'react-router-dom';
+
 const UpdateProfile = () => {
   const { user } = useContext(AuthContext);
+  const auth = getAuth(app);
+  const [name, setName] = useState('');
+  const [photo, setPhoto] = useState('');
+
+  useEffect(() => {
+    setName(user?.displayName);
+    setPhoto(user?.photoURL);
+  }, []);
+
+  const onChangeName = newName => {
+    console.log(newName);
+    setName(newName);
+  };
+  const onChangePhoto = newPhoto => {
+    console.log(newPhoto);
+    setPhoto(newPhoto);
+  };
+
+  const handleUpdate = () => {
+    updateProfile(auth.currentUser, {
+      displayName: name,
+      photoURL: photo,
+    }).then(result => {
+      console.log(result.user);
+
+      Swal.fire({
+        icon: 'success',
+        title: 'successful',
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    });
+  };
 
   return (
     <div className="container mx-auto my-10 flex justify-between p-5 bg-slate-200 border-2 border-gray-400 rounded-3xl h-auto">
+      <Helmet>
+        <title>Residence Hub || Update Your Profile</title>
+      </Helmet>
       <div className="w-full md:w-[50%]">
         <div>
           <h1 className="text-4xl font-bold text-center">
             Your Current Profile:
           </h1>
         </div>
-        <div className="w-32 mx-auto my-5">
-          <img
-            className="w-full h-full rounded-full"
-            src={user?.photoURL || 'https://i.ibb.co/zmbRY07/images.png'}
-            alt=""
-          />
+        <div className="w-32 h-32 rounded-full bg-no-repeat bg-contain bg-[url(https://i.ibb.co/zmbRY07/images.png)] mx-auto my-5">
+          {user && (
+            <img
+              className="w-full h-full rounded-full"
+              src={user?.photoURL}
+              alt=""
+            />
+          )}
         </div>
 
         <div className="space-y-3">
@@ -32,7 +76,7 @@ const UpdateProfile = () => {
           </h2>
         </div>
       </div>
-      <div className="w-full md:w-[50%]   ">
+      <form className="w-full md:w-[50%]   ">
         <div>
           <h1 className="text-4xl font-bold text-center">
             Update Your Profile
@@ -44,7 +88,8 @@ const UpdateProfile = () => {
               <input
                 type="text"
                 className="input w-full mb-3"
-                value={user?.displayName || ''}
+                value={name}
+                onChange={e => onChangeName(e.target.value)}
               />
             </div>
             <div>
@@ -52,7 +97,8 @@ const UpdateProfile = () => {
               <input
                 type="text"
                 className="input  w-full mb-3"
-                value={user?.photoURL || ''}
+                value={photo}
+                onChange={e => onChangePhoto(e.target.value)}
               />
             </div>
             <div>
@@ -60,17 +106,23 @@ const UpdateProfile = () => {
               <input
                 type="text"
                 className="input  w-full mb-3"
-                value={user?.email || ''}
+                value={user?.email || 'Not Found'}
+                onChange={e => onChangePhoto(e.target.value)}
               />
             </div>
+
             <div className="flex justify-end">
-              <button className="btn bg-blue-700 text-white ">
+              <button
+                onClick={handleUpdate}
+                className="btn bg-blue-700 text-white "
+              >
                 Save Changes
               </button>
             </div>
           </div>
         </div>
-      </div>
+      </form>
+      <ScrollRestoration />
     </div>
   );
 };

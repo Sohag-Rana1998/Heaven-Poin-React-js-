@@ -9,7 +9,7 @@ import {
 import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { FaLocationDot } from 'react-icons/fa6';
-import { useLoaderData, useParams } from 'react-router-dom';
+import { ScrollRestoration, useLoaderData, useParams } from 'react-router-dom';
 
 const ViewDetails = () => {
   const { id } = useParams();
@@ -186,6 +186,7 @@ const ViewDetails = () => {
           </div>
         </CardBody>
       </Card>
+      <ScrollRestoration />
     </div>
   );
 };

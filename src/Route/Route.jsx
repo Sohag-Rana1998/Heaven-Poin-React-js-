@@ -6,6 +6,8 @@ import Login from '../Pages/Login/Login';
 import Register from '../Pages/Register/Register';
 import ViewDetails from '../Pages/ViewDetails/ViewDetails';
 import UpdateProfile from '../Pages/UpdateProfile/UpdateProfile';
+import PrivateRoute from './PrivetRoute/PrivateRoute';
+import UserProfile from '../Pages/UserProfile/UserProfile';
 
 const router = createBrowserRouter([
   {
@@ -27,12 +29,28 @@ const router = createBrowserRouter([
       },
       {
         path: '/view-property/:id',
-        element: <ViewDetails></ViewDetails>,
+        element: (
+          <PrivateRoute>
+            <ViewDetails></ViewDetails>
+          </PrivateRoute>
+        ),
         loader: () => fetch(`/details.json`),
       },
       {
         path: '/update-profile',
-        element: <UpdateProfile></UpdateProfile>,
+        element: (
+          <PrivateRoute>
+            <UpdateProfile></UpdateProfile>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: '/user-profile',
+        element: (
+          <PrivateRoute>
+            <UserProfile></UserProfile>
+          </PrivateRoute>
+        ),
       },
     ],
   },

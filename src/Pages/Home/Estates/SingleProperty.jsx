@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import {
   Card,
   CardHeader,
@@ -52,7 +54,7 @@ const SingleProperty = ({ estate }) => {
             </p>
           </div>
         </CardHeader>
-        <CardBody className="flex flex-col  justify-between h-auto md:h-[400px] ">
+        <CardBody className="flex flex-col  justify-between h-auto md:h-[360px] ">
           <div>
             <div>
               <Typography variant="h4" color="blue-gray">
@@ -96,11 +98,11 @@ const SingleProperty = ({ estate }) => {
           </div>
 
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mt-3">
-            <h3 className=" text-xl text-blue-600  font-bold ">{price}</h3>
+            <h3 className="mb-2 text-xl text-blue-600  font-bold ">{price}</h3>
             <Link to={`/view-property/${id}`}>
               <Button
                 size="md"
-                className="bg-blue-600 w-full md:w-auto text-white font-bold"
+                className="bg-blue-600 mb-2 w-full md:w-auto text-white font-bold"
               >
                 View Property
               </Button>
@@ -110,6 +112,10 @@ const SingleProperty = ({ estate }) => {
       </Card>
     </div>
   );
+};
+
+SingleProperty.propTypes = {
+  estate: PropTypes.object,
 };
 
 export default SingleProperty;
