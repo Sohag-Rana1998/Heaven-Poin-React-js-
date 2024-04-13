@@ -8,6 +8,10 @@ import ViewDetails from '../Pages/ViewDetails/ViewDetails';
 import UpdateProfile from '../Pages/UpdateProfile/UpdateProfile';
 import PrivateRoute from './PrivetRoute/PrivateRoute';
 import UserProfile from '../Pages/UserProfile/UserProfile';
+import BuyHome from '../Pages/BuyHome/BuyHome';
+import RentHome from '../Pages/RentHome/RentHome';
+import SavedHomes from '../Pages/SavedHomes/SavedHomes';
+import Estates from '../Pages/Home/Estates/Estates';
 
 const router = createBrowserRouter([
   {
@@ -49,6 +53,28 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <UserProfile></UserProfile>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: '/buy-house',
+        element: <BuyHome></BuyHome>,
+        loader: () => fetch(`/estates.json`),
+      },
+      {
+        path: '/rent-house',
+        element: <RentHome></RentHome>,
+        loader: () => fetch(`/estates.json`),
+      },
+      {
+        path: '/saved-homes',
+        element: <SavedHomes></SavedHomes>,
+      },
+      {
+        path: '/property-estate',
+        element: (
+          <PrivateRoute>
+            <Estates></Estates>
           </PrivateRoute>
         ),
       },

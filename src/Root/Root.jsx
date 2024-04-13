@@ -5,15 +5,15 @@ import { Helmet } from 'react-helmet-async';
 
 const Root = () => {
   return (
-    <div className="max-w-8xl container mx-auto flex flex-col justify-between min-h-screen">
+    <div className="max-w-[1500px] px-3 container mx-auto flex flex-col justify-between min-h-screen">
       <Helmet>
         <title>RESIDENCE HUB</title>
       </Helmet>
-      <div className="max-w-7xl container mx-auto">
+      <div className="max-w-7xl  container mx-auto">
         <div className="">
           <NavBar></NavBar>
         </div>
-        <div>
+        <div className="mt-24">
           <Outlet></Outlet>
         </div>
       </div>

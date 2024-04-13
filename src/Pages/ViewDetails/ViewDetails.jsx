@@ -10,6 +10,7 @@ import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { FaLocationDot } from 'react-icons/fa6';
 import { ScrollRestoration, useLoaderData, useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const ViewDetails = () => {
   const { id } = useParams();
@@ -18,9 +19,30 @@ const ViewDetails = () => {
 
   useEffect(() => {
     const singleData = data.find(property => property.id == id);
-    console.log(singleData);
+
     setEstate(singleData);
   }, [id, data]);
+
+  const savedHomes = JSON.parse(localStorage.getItem('homes') || '[]');
+
+  const [Homes, setHomes] = useState(savedHomes);
+
+  const handleSavedHomes = home => {
+    const isExist = Homes.find(house => house.id === home.id);
+
+    if (!isExist) {
+      setHomes([...Homes, home]);
+
+      toast.success('Successfully Saved On Your Saved');
+    } else {
+      toast.warn('ALready Saved On Your Saved List.');
+    }
+  };
+  console.log(Homes);
+
+  useEffect(() => {
+    localStorage.setItem('homes', JSON.stringify(Homes));
+  }, [Homes]);
 
   const {
     estate_title,
@@ -112,17 +134,17 @@ const ViewDetails = () => {
             <img
               src={image_url}
               alt="image 1"
-              className="h-full w-full object-cover"
+              className="h-full w-full object-fit"
             />
             <img
               src={image_url2}
               alt="image 2"
-              className="h-full w-full object-cover"
+              className="h-full w-full object-fit"
             />
             <img
               src={image_url3}
               alt="image 3"
-              className="h-full w-full object-cover"
+              className="h-full w-full object-fit"
             />
           </Carousel>
           <button className="px-10 py-4 rounded-br-xl bg-blue-500 absolute z-10 right-0 bottom-0 text-white text-xl font-bold bg-opacity-80">
@@ -180,7 +202,11 @@ const ViewDetails = () => {
           </div>
 
           <div className="flex flex-col md:flex-row justify-end  r mt-3">
-            <Button size="lg" className="bg-blue-600 w-full md:w-40 ">
+            <Button
+              onClick={() => handleSavedHomes(estate)}
+              size="lg"
+              className="bg-blue-600 w-full md:w-40 hover:bg-blue-gray-900"
+            >
               Add To Cart
             </Button>
           </div>

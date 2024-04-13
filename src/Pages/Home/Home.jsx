@@ -7,9 +7,9 @@ import { ScrollRestoration } from 'react-router-dom';
 
 const Home = () => {
   return (
-    <div>
+    <div className="my-10">
       <Helmet>
-        <title>RESIDENCE HUB || Home</title>
+        <title>Residence Hub || Home</title>
       </Helmet>
       <Banner></Banner>
       <Estates></Estates>

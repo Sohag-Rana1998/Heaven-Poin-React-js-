@@ -25,7 +25,7 @@ const Agents = () => {
         <h1 className="text-4xl font-bold">Best Agents</h1>
         <p>
           With the “list agents shortcode” you can show your agents in any page,
-          alognside with their <br /> contact details and link to their agent
+          along side with their <br /> contact details and link to their agent
           profile.
         </p>
       </div>
@@ -51,16 +51,16 @@ const Agents = () => {
           </CardBody>
           <CardFooter className="pt-0 flex justify-between">
             <div className="text-lg flex gap-3">
-              <FaFacebook></FaFacebook>
-              <FaInstagram></FaInstagram>
-              <FaTwitter></FaTwitter>
-              <FaLinkedin></FaLinkedin>
-              <FaPinterest></FaPinterest>
-              <FaVimeo></FaVimeo>
+              <FaFacebook className="cursor-pointer"></FaFacebook>
+              <FaInstagram className="cursor-pointer"></FaInstagram>
+              <FaTwitter className="cursor-pointer"></FaTwitter>
+              <FaLinkedin className="cursor-pointer"></FaLinkedin>
+              <FaPinterest className="cursor-pointer"></FaPinterest>
+              <FaVimeo className="cursor-pointer"></FaVimeo>
             </div>
             <div className="flex text-lg gap-3">
-              <FaMessage></FaMessage>
-              <FaPhone></FaPhone>
+              <FaMessage className="cursor-pointer"></FaMessage>
+              <FaPhone className="cursor-pointer"></FaPhone>
             </div>
           </CardFooter>
         </Card>
@@ -80,16 +80,16 @@ const Agents = () => {
           </CardBody>
           <CardFooter className="pt-0 flex justify-between">
             <div className="text-lg flex gap-3">
-              <FaFacebook></FaFacebook>
-              <FaInstagram></FaInstagram>
-              <FaTwitter></FaTwitter>
-              <FaLinkedin></FaLinkedin>
-              <FaPinterest></FaPinterest>
-              <FaVimeo></FaVimeo>
+              <FaFacebook className="cursor-pointer"></FaFacebook>
+              <FaInstagram className="cursor-pointer"></FaInstagram>
+              <FaTwitter className="cursor-pointer"></FaTwitter>
+              <FaLinkedin className="cursor-pointer"></FaLinkedin>
+              <FaPinterest className="cursor-pointer"></FaPinterest>
+              <FaVimeo className="cursor-pointer"></FaVimeo>
             </div>
             <div className="flex text-lg gap-3">
-              <FaMessage></FaMessage>
-              <FaPhone></FaPhone>
+              <FaMessage className="cursor-pointer"></FaMessage>
+              <FaPhone className="cursor-pointer"></FaPhone>
             </div>
           </CardFooter>
         </Card>
@@ -109,16 +109,16 @@ const Agents = () => {
           </CardBody>
           <CardFooter className="pt-0 flex justify-between">
             <div className="text-lg flex gap-3">
-              <FaFacebook></FaFacebook>
-              <FaInstagram></FaInstagram>
-              <FaTwitter></FaTwitter>
-              <FaLinkedin></FaLinkedin>
-              <FaPinterest></FaPinterest>
-              <FaVimeo></FaVimeo>
+              <FaFacebook className="cursor-pointer"></FaFacebook>
+              <FaInstagram className="cursor-pointer"></FaInstagram>
+              <FaTwitter className="cursor-pointer"></FaTwitter>
+              <FaLinkedin className="cursor-pointer"></FaLinkedin>
+              <FaPinterest className="cursor-pointer"></FaPinterest>
+              <FaVimeo className="cursor-pointer"></FaVimeo>
             </div>
             <div className="flex text-lg gap-3">
-              <FaMessage></FaMessage>
-              <FaPhone></FaPhone>
+              <FaMessage className="cursor-pointer"></FaMessage>
+              <FaPhone className="cursor-pointer"></FaPhone>
             </div>
           </CardFooter>
         </Card>

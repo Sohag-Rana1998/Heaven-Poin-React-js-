@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import SingleProperty from './SingleProperty';
+import { ScrollRestoration } from 'react-router-dom';
 
 const Estates = () => {
   const [estates, setEstates] = useState([]);
@@ -10,7 +11,7 @@ const Estates = () => {
   }, []);
 
   return (
-    <div className="mt-20 container mx-auto">
+    <div className="my-20 container mx-auto">
       <div className="text-center mb-10">
         <p>Our Featured Properties For Sale and Rent</p>
         <h1 className="text-4xl font-bold">Properties For Sale & Rent</h1>
@@ -20,6 +21,7 @@ const Estates = () => {
           <SingleProperty key={estate.id} estate={estate}></SingleProperty>
         ))}
       </div>
+      <ScrollRestoration />
     </div>
   );
 };

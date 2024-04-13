@@ -100,11 +100,11 @@ const Login = () => {
   };
 
   return (
-    <div className="flex flex-col justify-between items-center ">
+    <div className="flex flex-col  justify-between items-center ">
       <Helmet>
         <title>RESIDENCE HUB || Login</title>
       </Helmet>
-      <div className="flex flex-col max-w-lg container p-5 md:p-20 rounded-md   bg-gray-50 text-gray-800">
+      <div className="flex flex-col max-w-lg container p-5 md:p-20 rounded-md   bg-slate-100 border-2 my-5 shadow-xl border-purple-200 text-gray-800">
         <div className="mb-4 text-center">
           <h1 className="my-3 text-4xl font-bold">Log in</h1>
           <p className="text-sm dark:text-gray-600">
