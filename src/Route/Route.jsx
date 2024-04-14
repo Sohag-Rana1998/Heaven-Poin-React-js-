@@ -12,6 +12,7 @@ import BuyHome from '../Pages/BuyHome/BuyHome';
 import RentHome from '../Pages/RentHome/RentHome';
 import SavedHomes from '../Pages/SavedHomes/SavedHomes';
 import Estates from '../Pages/Home/Estates/Estates';
+import ContactUs from '../Pages/ContactUs/ContactUs';
 
 const router = createBrowserRouter([
   {
@@ -77,6 +78,10 @@ const router = createBrowserRouter([
             <Estates></Estates>
           </PrivateRoute>
         ),
+      },
+      {
+        path: '/contact-us',
+        element: <ContactUs></ContactUs>,
       },
     ],
   },

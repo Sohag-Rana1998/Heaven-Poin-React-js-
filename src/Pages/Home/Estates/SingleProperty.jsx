@@ -9,6 +9,8 @@ import {
 } from '@material-tailwind/react';
 import { FaLocationDot } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
+import 'animate.css';
+
 const SingleProperty = ({ estate }) => {
   const {
     id,
@@ -23,7 +25,12 @@ const SingleProperty = ({ estate }) => {
     description,
   } = estate;
   return (
-    <div className="">
+    <div
+      data-aos="zoom-in"
+      data-aos-duration="1000"
+      data-aos-delay="200"
+      className=""
+    >
       <Card className="w-full  overflow-hidden">
         <CardHeader
           floated={false}
@@ -34,7 +41,7 @@ const SingleProperty = ({ estate }) => {
           <div className="relative">
             <img
               src={image_url}
-              className="w-full h-72"
+              className="w-full  h-72 hover:scale-[110%] duration-700"
               alt="ui/ux review check"
             />
             <button className="px-8 py-3 rounded-bl-3xl bg-blue-500 absolute z-10 right-0 top-0 text-white font-bold bg-opacity-80">
@@ -105,7 +112,7 @@ const SingleProperty = ({ estate }) => {
             <Link to={`/view-property/${id}`}>
               <Button
                 size="md"
-                className="bg-blue-600 mb-2 w-full md:w-auto text-white font-bold hover:bg-blue-gray-900"
+                className="bg-blue-600 mb-2 hover:scale-[110%] duration-500 w-full md:w-auto text-white font-bold hover:bg-blue-gray-900"
               >
                 View Property
               </Button>

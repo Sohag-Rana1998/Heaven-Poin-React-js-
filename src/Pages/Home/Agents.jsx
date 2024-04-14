@@ -4,8 +4,11 @@ import {
   CardBody,
   CardFooter,
   Typography,
-  Button,
 } from '@material-tailwind/react';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
 import {
   FaFacebook,
   FaInstagram,
@@ -20,7 +23,12 @@ import {
 const Agents = () => {
   return (
     <div className="mt-20 container mx-auto">
-      <div className="text-center  mb-10">
+      <div
+        data-aos="zoom-in"
+        data-aos-duration="1000"
+        data-aos-delay="200"
+        className="text-center  mb-10"
+      >
         <p className="font-bold">Meet our </p>
         <h1 className="text-4xl font-bold">Best Agents</h1>
         <p>
@@ -30,7 +38,11 @@ const Agents = () => {
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-5">
-        <Card className="mt-6 w-full">
+        <Card
+          data-aos="fade-left"
+          data-aos-duration="1000"
+          className="mt-6 w-full "
+        >
           <CardHeader color="blue-gray" className="relative h-56">
             <img
               src="https://i.ibb.co/JjJXCY3/person3-500x328.webp"
@@ -64,7 +76,11 @@ const Agents = () => {
             </div>
           </CardFooter>
         </Card>
-        <Card className="mt-6 w-full">
+        <Card
+          data-aos="fade-down"
+          data-aos-duration="1000"
+          className="mt-6 w-full"
+        >
           <CardHeader color="blue-gray" className="relative h-56">
             <img src="https://i.ibb.co/DVwfwkR/person2-500x328.jpg" />
           </CardHeader>
@@ -93,7 +109,11 @@ const Agents = () => {
             </div>
           </CardFooter>
         </Card>
-        <Card className="mt-6 w-full">
+        <Card
+          data-aos="fade-right"
+          data-aos-duration="1000"
+          className="mt-6 w-full"
+        >
           <CardHeader color="blue-gray" className="relative h-56">
             <img src="https://i.ibb.co/L8VGtmW/person-sam-davies-500x328.webp" />
           </CardHeader>

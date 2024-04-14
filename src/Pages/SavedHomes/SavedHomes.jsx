@@ -14,12 +14,12 @@ const SavedHomes = () => {
   const Homes = JSON.parse(localStorage.getItem('homes') || '[]');
 
   return (
-    <div className="my-10">
+    <div className="my-10  min-h-screen">
       <Helmet>
         <title>Residence Hub || Saved Homes</title>
       </Helmet>
       <div>
-        <div className="h-[150px] w-full rounded-xl bg-[url(https://i.ibb.co/PtcPs7P/6.jpg)] text-center mb-10  bg-no-repeat bg-center bg-opacity-10">
+        <div className="h-[150px] animate__animated animate__fadeInLeft w-full rounded-xl bg-[url(https://i.ibb.co/PtcPs7P/6.jpg)] text-center mb-10  bg-no-repeat bg-center bg-opacity-10">
           <div className="h-[150px] w-full rounded-xl flex items-center justify-center bg-black bg-opacity-30">
             <h1 className="text-4xl font-bold text-white">Your Property</h1>
           </div>
@@ -30,7 +30,7 @@ const SavedHomes = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {Homes.map(house => (
               <div key={house.id}>
-                <Card className="w-full h-full overflow-hidden">
+                <Card className="w-full h-full animate__animated animate__zoomIn  overflow-hidden">
                   <CardHeader
                     floated={false}
                     shadow={false}
@@ -40,7 +40,7 @@ const SavedHomes = () => {
                     <div className="relative h-72 ">
                       <img
                         src={house.image_url}
-                        className="w-full h-full"
+                        className="w-full hover:scale-[110%] duration-500 h-full"
                         alt="ui/ux review check"
                       />
                       <button className="px-8 py-3 rounded-bl-3xl bg-blue-500 absolute z-10 right-0 top-0 text-white font-bold bg-opacity-80">
@@ -110,7 +110,7 @@ const SavedHomes = () => {
                       <Link to={`/view-property/${house.id}`}>
                         <Button
                           size="md"
-                          className="bg-blue-600 mb-2 w-full md:w-auto text-white font-bold"
+                          className="bg-blue-600 hover:scale-[110%] duration-500 mb-2 w-full md:w-auto text-white font-bold"
                         >
                           View Details
                         </Button>
@@ -125,8 +125,8 @@ const SavedHomes = () => {
         </>
       ) : (
         <>
-          <div className="w-full min-h-screen flex flex-col gap-5 justify-center items-center">
-            <h1 className="text-2xl">
+          <div className="w-full flex  flex-col gap-5 mt-10 md:mt-20 justify-center items-center animate__animated animate__zoomIn">
+            <h1 className="text-2xl ">
               You do not saved any property. To add property <br /> please click
               on the button below.
             </h1>

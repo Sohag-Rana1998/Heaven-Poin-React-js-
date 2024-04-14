@@ -36,7 +36,7 @@ const Banner = () => {
           />
         </Carousel>
         <div>
-          <div className=" absolute  left-0 top-10 mx-16  lg:left-24 md:top-28 text-white">
+          <div className=" absolute  left-0 top-10 mx-16  lg:left-24 md:top-28 text-white animate__animated animate__fadeInDown ">
             <p className="font-bold mb-5 ">Luxury Houses</p>
             <h1 className=" text-3xl md:text-5xl font-bold  border-l-2 border-white pl-5 ">
               Luxury <br /> Residence Here

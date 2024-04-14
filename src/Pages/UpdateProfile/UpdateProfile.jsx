@@ -6,7 +6,7 @@ import { getAuth, updateProfile } from 'firebase/auth';
 import app from '../../FireBase/firebase.config';
 
 import { ScrollRestoration } from 'react-router-dom';
-import Swal from 'sweetalert2';
+
 import { toast } from 'react-toastify';
 
 const UpdateProfile = () => {
@@ -58,7 +58,7 @@ const UpdateProfile = () => {
           <title>Residence Hub || Update Your Profile</title>
         </Helmet>
         <div className="w-full md:w-[50%]">
-          <div>
+          <div className="animate__animated animate__fadeInLeft">
             <h1 className="text-4xl font-bold text-center">
               Your Current Profile:
             </h1>
@@ -87,7 +87,7 @@ const UpdateProfile = () => {
         </div>
         <div className="w-full md:w-[50%]   ">
           <div>
-            <h1 className="text-4xl font-bold text-center">
+            <h1 className="text-4xl font-bold text-center animate__animated animate__fadeInRight">
               Update Your Profile
             </h1>
 

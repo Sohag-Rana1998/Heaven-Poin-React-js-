@@ -2,6 +2,11 @@ import { Outlet } from 'react-router-dom';
 import NavBar from '../Pages/Shared/Navbar/NavBar';
 import Footer from '../Pages/Shared/Footer/Footer';
 import { Helmet } from 'react-helmet-async';
+import 'animate.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
 
 const Root = () => {
   return (

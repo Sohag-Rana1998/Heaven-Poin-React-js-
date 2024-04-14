@@ -83,7 +83,7 @@ const NavBar = () => {
       )}
       <li>
         <NavLink
-          to="/contact"
+          to="/contact-us"
           className={({ isActive, isPending }) =>
             isActive
               ? 'border-2  font-bold text-blue-600 border-blue-600'
