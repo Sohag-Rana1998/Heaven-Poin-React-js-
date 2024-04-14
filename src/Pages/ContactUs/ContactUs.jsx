@@ -10,19 +10,19 @@ const ContactUs = () => {
         <div className="animate__animated animate__fadeInDown w-full rounded-xl bg-[url(https://i.ibb.co/n0c4YZq/customercare.jpg)] bg-cover text-center mb-10  bg-no-repeat bg-center bg-opacity-10  ">
           <div className=" h-full w-full rounded-xl flex flex-col md:flex-row items-center justify-between bg-black  bg-opacity-45 p-10">
             <div
-              data-aos="fade-right"
+              data-aos="zoom-in"
               data-aos-duration="1000"
               data-aos-delay="1000"
               className="text-white text-center md:text-left lg:text-left pl-4 lg:pl-14"
             >
               <h1 className="text-5xl font-play  font-bold ">Get In Touch</h1>
               <p className="font-work">
-                Want to get in touch? We&nbsp;d love <br /> to hear from you.
-                Here&nbsp;s how you can reach us.
+                Want to get in touch? We would love <br /> to hear from you.
+                Here is away how you can reach us.
               </p>
             </div>
             <div
-              data-aos="fade-left"
+              data-aos="zoom-in"
               data-aos-duration="1000"
               data-aos-delay="1000"
               className="bg-white w-full md:w-[360px] border-2 border-gray-400  rounded-xl p-5 md:p-10"
@@ -64,42 +64,44 @@ const ContactUs = () => {
         </div>
       </div>
 
-      <div className="w-full bg-slate-100  rounded-md p-3 md:p-10">
-        <div className=" w-full md:w-4/5 bg-white mx-auto rounded-xl mt-10  p-3 md:p-10">
+      <div className="w-full bg-slate-100  rounded-md p-5 ">
+        <div className=" w-full  mx-auto rounded-xl mt-5">
           <h2 className="text-xl md:text-3xl font-bold mb-3">
             Give Us Your Message:
           </h2>
           <div>
-            <div className=" flex flex-col lg:flex-row gap-3">
+            <div className=" flex flex-col lg:flex-row gap-5 my-5">
               <input
                 type="text"
-                className="input w-full  lg:w-72 border-2 border-gray-500"
+                className="input w-full   border-2 border-gray-500"
                 placeholder="Your Name"
               />
               <input
                 type="email"
-                className="input  w-full lg:w-72  border-2 border-gray-500"
+                className="input  w-full   border-2 border-gray-500"
                 placeholder="Your Email"
               />
               <input
                 type="text"
-                className="input  w-full  lg:w-72 border-2 border-gray-500"
+                className="input  w-full   border-2 border-gray-500"
                 placeholder="Your Phone"
               />
             </div>
-            <div className="mt-4">
+            <div className="">
               <textarea
                 cols="30"
                 rows="10"
                 className="w-full  border-2 border-gray-500 p-5 rounded-2xl mb-4"
                 placeholder="Message"
               ></textarea>
-              <Button
-                size="lg"
-                className="text-white font-bold w-full hover:scale-[110%] hover:bg-gray-900 md:w-48 bg-orange-600"
-              >
-                Send Email
-              </Button>
+              <div className="w-full flex justify-end">
+                <Button
+                  size="lg"
+                  className="text-white font-bold w-full hover:scale-[110%] hover:bg-gray-900 md:w-60 bg-orange-600"
+                >
+                  Send Email
+                </Button>
+              </div>
             </div>
           </div>
         </div>

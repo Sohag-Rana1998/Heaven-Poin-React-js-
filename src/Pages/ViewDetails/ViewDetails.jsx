@@ -62,9 +62,12 @@ const ViewDetails = () => {
       <Helmet>
         <title>RESIDENCE HUB || Details </title>
       </Helmet>
-      <div className="h-[150px] animate__animated animate__fadeInRight w-full rounded-xl bg-[url(https://i.ibb.co/PtcPs7P/6.jpg)] text-center mb-10  bg-no-repeat bg-center bg-opacity-10">
+
+      <div className="h-[150px]  animate__animated animate__fadeInDown w-full rounded-xl bg-[url(https://i.ibb.co/PtcPs7P/6.jpg)] text-center mb-10  bg-no-repeat bg-center bg-opacity-10">
         <div className="h-[150px] w-full rounded-xl flex items-center justify-center bg-black bg-opacity-30">
-          <h1 className="text-4xl font-bold text-white">Property Details</h1>
+          <h1 className="text-4xl font-bold text-white animate__animated animate__zoomIn animate__delay__1s">
+            Property Details
+          </h1>
         </div>
       </div>
       <Card>

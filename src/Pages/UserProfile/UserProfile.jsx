@@ -1,49 +1,12 @@
 import { useContext } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
-import { Card } from '@material-tailwind/react';
+
 import { Helmet } from 'react-helmet-async';
 
 const UserProfile = () => {
   const { user } = useContext(AuthContext);
   return (
-    // <div>
-    //   <Helmet>
-    //     <title>Residence Hub || User Profile</title>
-    //   </Helmet>
-    //   <div className="w-full min-h-screen md:w-[50%] mx-auto ">
-    //     <div></div>
-    //     <Card className="p-5  md:p-14 w-full bg-sky-200 mt-5 border-2 border-gray-900 shadow-xl animate__animated animate__zoomIn">
-    //       <div className="">
-    //         <h1 className="text-4xl underline mb-5 font-bold text-center">
-    //           Your Profile:
-    //         </h1>
-    //       </div>
-    //       <div className="w-32 h-32 rounded-full bg-no-repeat bg-contain bg-[url(https://i.ibb.co/zmbRY07/images.png)] mx-auto my-5">
-    //         {user && (
-    //           <img
-    //             className="w-full h-full rounded-full"
-    //             src={user?.photoURL}
-    //             alt=""
-    //           />
-    //         )}
-    //       </div>
-
-    //       <div className="space-y-3">
-    //         <h2 className="text-2xl">
-    //           {' '}
-    //           <span className="font-bold">User Name:</span>
-    //           {user?.displayName || ''}
-    //         </h2>
-    //         <h2 className="text-2xl">
-    //           {' '}
-    //           <span className="font-bold">User Email:</span> {user?.email || ''}
-    //         </h2>
-    //       </div>
-    //     </Card>
-    //   </div>
-    // </div>
-
-    <div className="max-w-5xl animate__animated animate__zoomIn  mx-auto  mt-16 bg-white shadow-xl rounded-lg text-gray-900">
+    <div className="max-w-5xl animate__animated animate__zoomIn   mx-auto  my-16 bg-white shadow-xl rounded-lg text-gray-900">
       <Helmet>
         <title>Residence Hub || User Profile</title>
       </Helmet>
@@ -62,9 +25,9 @@ const UserProfile = () => {
         <p className="text-gray-500">{user?.email}</p>
       </div>
 
-      <div className="p-4 border-t mx-8 mt-2">
-        <button className="w-full md:w-1/4 block mx-auto rounded-full bg-gray-900 hover:shadow-lg font-semibold text-white px-6 py-2">
-          Follow
+      <div className="p-4 border-t  mt-2">
+        <button className="w-full md:w-72 block mx-auto rounded-full bg-gray-900 hover:shadow-lg font-semibold text-white px-6 py-2">
+          Add More About You
         </button>
       </div>
     </div>

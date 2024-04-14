@@ -18,7 +18,7 @@ const Root = () => {
         <div className="">
           <NavBar></NavBar>
         </div>
-        <div className="mt-24">
+        <div className="mt-8 lg:mt-24">
           <Outlet></Outlet>
         </div>
       </div>

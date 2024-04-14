@@ -19,7 +19,7 @@ const NavBar = () => {
   };
 
   const Links = (
-    <div className="flex flex-col   lg:flex-row gap-3">
+    <div className="flex flex-col   lg:flex-row gap-2">
       <li>
         <NavLink
           to="/"
@@ -99,32 +99,32 @@ const NavBar = () => {
   );
 
   return (
-    <div className=" flex justify-between fixed z-30 bg-white py-3 max-w-7xl container  mx-auto">
-      <div className="flex justify-between w-full">
-        <div>
-          <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h8m-8 6h16"
-                />
-              </svg>
-            </div>
-            <ul
-              tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+    <div className="navbar max-w-7xl container  mx-auto  bg-base-100">
+      <div className="navbar-start">
+        <div className="dropdown">
+          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
             >
-              {Links}
-              <div className="navbar-end">
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h8m-8 6h16"
+              />
+            </svg>
+          </div>
+          <ul
+            tabIndex={0}
+            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+          >
+            {Links}
+            <div className="navbar-end">
+              <div className=" ">
                 {user ? (
                   <div className="">
                     <Avatar
@@ -135,7 +135,7 @@ const NavBar = () => {
                     />
                     <button
                       onClick={handleLogout}
-                      className="btn bg-[#23BE0A]   mr-3 text-white"
+                      className="btn bg-[#23BE0A] hover:bg-blue-gray-900   mr-3 text-white"
                     >
                       Log Out
                     </button>
@@ -160,53 +160,55 @@ const NavBar = () => {
                   </Link>
                 )}
               </div>
-            </ul>
-          </div>
-          <Link to={'/'}>
-            {' '}
-            <button className="btn btn-ghost    text-xl text-[#23BE0A]">
-              RESIDENCE HUB
-            </button>
-          </Link>
+            </div>
+          </ul>
         </div>
-        <div className=" hidden  lg:flex">
-          <ul className="menu menu-horizontal px-1 mr-3"> {Links}</ul>
-          <div className="hidden md:flex">
-            {user ? (
-              <div className="">
-                <Avatar
-                  onMouseEnter={handleHover}
-                  onMouseLeave={handleLeave}
-                  src={user && user?.photoURL}
-                  className="mr-4 cursor-pointer bg-no-repeat bg-contain bg-[url(https://i.ibb.co/zmbRY07/images.png)]"
-                />
-                <button
-                  onClick={handleLogout}
-                  className="btn bg-[#23BE0A] hover:bg-blue-gray-900   mr-3 text-white"
-                >
-                  Log Out
-                </button>
-                {type ? (
-                  <div className="w-auto bg-black bg-opacity-40 z-10 absolute py-4 px-5 rounded-2xl top-16 right-20 ">
-                    <div>
-                      <h2 className="w-full text-white font-bold text-xl">
-                        {user?.displayName || ''}
-                      </h2>
-                    </div>
+        <Link to={'/'}>
+          <button className="btn btn-ghost  w-52 text-xl font-bold text-blue-600">
+            RESIDENCE HUB
+          </button>
+        </Link>
+      </div>
+      <div className="navbar-center hidden  lg:flex">
+        <ul className="menu menu-horizontal px-1"> {Links}</ul>
+      </div>
+
+      <div className="navbar-end hidden md:flex lg:flex">
+        <div className="flex  ">
+          {user ? (
+            <div className="flex justify-between items-center">
+              <Avatar
+                onMouseEnter={handleHover}
+                onMouseLeave={handleLeave}
+                src={user && user?.photoURL}
+                className="mr-4 cursor-pointer bg-no-repeat bg-contain bg-[url(https://i.ibb.co/zmbRY07/images.png)]"
+              />
+              <button
+                onClick={handleLogout}
+                className="btn bg-[#23BE0A] hover:bg-blue-gray-900   mr-3 text-white"
+              >
+                Log Out
+              </button>
+              {type ? (
+                <div className="w-auto bg-black bg-opacity-40 z-10 absolute py-4 px-5 rounded-2xl top-16 right-20 ">
+                  <div>
+                    <h2 className="w-full text-white font-bold text-xl">
+                      {user?.displayName || ''}
+                    </h2>
                   </div>
-                ) : (
-                  ''
-                )}
-              </div>
-            ) : (
-              <Link to={'/login'}>
-                {' '}
-                <button className="btn bg-[#23BE0A] mr-3 text-white">
-                  Log In
-                </button>
-              </Link>
-            )}
-          </div>
+                </div>
+              ) : (
+                ''
+              )}
+            </div>
+          ) : (
+            <Link to={'/login'}>
+              {' '}
+              <button className="btn bg-[#23BE0A] mr-3 text-white">
+                Log In
+              </button>
+            </Link>
+          )}
         </div>
       </div>
     </div>

@@ -53,45 +53,47 @@ const UpdateProfile = () => {
     );
   } else {
     return (
-      <div className="container mx-auto my-10 flex justify-between p-5 bg-slate-200 border-2 border-gray-400 rounded-3xl h-auto">
+      <div className="container mx-auto my-10 flex flex-col lg:flex-row gap-5 justify-between p-5 bg-slate-200 border-2 border-gray-400 rounded-3xl h-auto">
         <Helmet>
           <title>Residence Hub || Update Your Profile</title>
         </Helmet>
         <div className="w-full md:w-[50%]">
-          <div className="animate__animated animate__fadeInLeft">
+          <div className=" animate__animated animate__fadeInDown">
             <h1 className="text-4xl font-bold text-center">
               Your Current Profile:
             </h1>
           </div>
-          <div className="w-32 h-32 rounded-full bg-no-repeat bg-contain bg-[url(https://i.ibb.co/zmbRY07/images.png)] mx-auto my-5">
-            {user && (
-              <img
-                className="w-full h-full rounded-full"
-                src={user?.photoURL}
-                alt=""
-              />
-            )}
-          </div>
-
-          <div className="space-y-3">
-            <h2 className="text-2xl">
-              {' '}
-              <span className="font-bold">User Name:</span>
-              {user?.displayName || ''}
-            </h2>
-            <h2 className="text-2xl">
-              {' '}
-              <span className="font-bold">User Email:</span> {user?.email || ''}
-            </h2>
+          <div className="animate__animated animate__zoomIn">
+            <div className="w-32 h-32  rounded-full bg-no-repeat bg-contain bg-[url(https://i.ibb.co/zmbRY07/images.png)] mx-auto my-5">
+              {user && (
+                <img
+                  className="w-full h-full rounded-full"
+                  src={user?.photoURL}
+                  alt=""
+                />
+              )}
+            </div>
+            <div className="space-y-3">
+              <h2 className="text-2xl">
+                {' '}
+                <span className="font-bold">User Name:</span>
+                {user?.displayName || ''}
+              </h2>
+              <h2 className="text-2xl">
+                {' '}
+                <span className="font-bold">User Email:</span>{' '}
+                {user?.email || ''}
+              </h2>
+            </div>
           </div>
         </div>
         <div className="w-full md:w-[50%]   ">
           <div>
-            <h1 className="text-4xl font-bold text-center animate__animated animate__fadeInRight">
+            <h1 className="text-4xl font-bold text-center animate__animated animate__fadeInDown">
               Update Your Profile
             </h1>
 
-            <div className="w-3/4 mx-auto">
+            <div className="w-3/4 mx-auto animate__animated animate__zoomIn">
               <div>
                 <h2> Your Name:</h2>
                 <input

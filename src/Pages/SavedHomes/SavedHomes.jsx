@@ -19,9 +19,12 @@ const SavedHomes = () => {
         <title>Residence Hub || Saved Homes</title>
       </Helmet>
       <div>
-        <div className="h-[150px] animate__animated animate__fadeInLeft w-full rounded-xl bg-[url(https://i.ibb.co/PtcPs7P/6.jpg)] text-center mb-10  bg-no-repeat bg-center bg-opacity-10">
+        {/* animate__animated animate__fadeInLeft */}
+        <div className="h-[150px] w-full animate__animated animate__fadeInDown rounded-xl bg-[url(https://i.ibb.co/PtcPs7P/6.jpg)] text-center mb-10  bg-no-repeat bg-center bg-opacity-10">
           <div className="h-[150px] w-full rounded-xl flex items-center justify-center bg-black bg-opacity-30">
-            <h1 className="text-4xl font-bold text-white">Your Property</h1>
+            <h1 className="text-4xl font-bold animate__animated animate__zoomIn animate__delay__1s text-white">
+              Your Property
+            </h1>
           </div>
         </div>
       </div>

@@ -1,6 +1,5 @@
 import {
   Card,
-  CardHeader,
   CardBody,
   CardFooter,
   Typography,
@@ -24,7 +23,7 @@ const Agents = () => {
   return (
     <div className="mt-20 container mx-auto">
       <div
-        data-aos="zoom-in"
+        data-aos="fade-down"
         data-aos-duration="1000"
         data-aos-delay="200"
         className="text-center  mb-10"
@@ -32,25 +31,26 @@ const Agents = () => {
         <p className="font-bold">Meet our </p>
         <h1 className="text-4xl font-bold">Best Agents</h1>
         <p>
-          With the “list agents shortcode” you can show your agents in any page,
-          along side with their <br /> contact details and link to their agent
-          profile.
+          With the “list agents short code” you can show your agents in any
+          page, along side with their <br /> contact details and link to their
+          agent profile.
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-5">
         <Card
-          data-aos="fade-left"
+          data-aos="zoom-in"
           data-aos-duration="1000"
-          className="mt-6 w-full "
+          className="mt-6 w-full rounded-2xl "
         >
-          <CardHeader color="blue-gray" className="relative h-56">
+          <div className=" w-full rounded-2xl h-56">
             <img
               src="https://i.ibb.co/JjJXCY3/person3-500x328.webp"
               alt="card-image"
+              className="w-full h-full rounded-2xl"
             />
             {/* <img src="https://i.ibb.co/DVwfwkR/person2-500x328.jpg" />
           <img src="https://i.ibb.co/L8VGtmW/person-sam-davies-500x328.webp" /> */}
-          </CardHeader>
+          </div>
           <CardBody>
             <Typography variant="h5" color="blue-gray" className="mb-2">
               Lily Bicharm
@@ -77,13 +77,18 @@ const Agents = () => {
           </CardFooter>
         </Card>
         <Card
-          data-aos="fade-down"
+          data-aos="zoom-in"
           data-aos-duration="1000"
           className="mt-6 w-full"
         >
-          <CardHeader color="blue-gray" className="relative h-56">
-            <img src="https://i.ibb.co/DVwfwkR/person2-500x328.jpg" />
-          </CardHeader>
+          <div className=" w-full rounded-2xl h-56">
+            <img
+              src="https://i.ibb.co/DVwfwkR/person2-500x328.jpg"
+              alt="card-image"
+              className="w-full h-full rounded-2xl"
+            />
+          </div>
+
           <CardBody>
             <Typography variant="h5" color="blue-gray" className="mb-2">
               Jack London
@@ -110,13 +115,17 @@ const Agents = () => {
           </CardFooter>
         </Card>
         <Card
-          data-aos="fade-right"
+          data-aos="zoom-in"
           data-aos-duration="1000"
-          className="mt-6 w-full"
+          className="mt-6 w-full px-3"
         >
-          <CardHeader color="blue-gray" className="relative h-56">
-            <img src="https://i.ibb.co/L8VGtmW/person-sam-davies-500x328.webp" />
-          </CardHeader>
+          <div className=" w-full rounded-2xl h-56">
+            <img
+              src="https://i.ibb.co/L8VGtmW/person-sam-davies-500x328.webp"
+              alt="card-image"
+              className="w-full h-full rounded-2xl"
+            />
+          </div>
           <CardBody>
             <Typography variant="h5" color="blue-gray" className="mb-2">
               Dennis Albo

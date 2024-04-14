@@ -25,12 +25,7 @@ const SingleProperty = ({ estate }) => {
     description,
   } = estate;
   return (
-    <div
-      data-aos="zoom-in"
-      data-aos-duration="1000"
-      data-aos-delay="200"
-      className=""
-    >
+    <div className="">
       <Card className="w-full  overflow-hidden">
         <CardHeader
           floated={false}

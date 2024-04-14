@@ -29,11 +29,11 @@ const Footer = () => {
     <div className="w-full mx-auto bg-gray-800  text-white  ">
       <footer className="relative max-w-7xl mx-auto p-5">
         <div className="">
-          <div className="flex flex-col md:flex-row justify-between items-center text-center ">
+          <div className="flex flex-col lg:flex-row justify-between items-center text-center ">
             <div className="text-3xl font-bold text-light-blue-600">
               RESIDENCE HUB
             </div>
-            <div className="mx-auto grid w-full grid-cols-2 gap-8 py-12 md:grid-cols-2 lg:grid-cols-3">
+            <div className="mx-auto grid w-full grid-cols-1 gap-8 py-12 md:grid-cols-2 lg:grid-cols-3">
               {SITEMAP.map(({ title, links }, key) => (
                 <div key={key} className="w-full">
                   <Typography
