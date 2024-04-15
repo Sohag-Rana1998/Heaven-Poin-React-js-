@@ -19,7 +19,15 @@ const RentHome = () => {
     setRent(RentHouse);
   }, [data]);
 
-  return (
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setTimeout(setLoading, 500, false);
+  }, []);
+  return loading ? (
+    <div className="w-full min-h-screen flex justify-center items-center">
+      <span className="loading loading-spinner loading-lg"></span>
+    </div>
+  ) : (
     <div className="my-5">
       <Helmet>
         <title>Residence Hub || Buy House</title>

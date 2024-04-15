@@ -9,11 +9,20 @@ import {
 import { Helmet } from 'react-helmet-async';
 import { FaLocationDot } from 'react-icons/fa6';
 import { Link, ScrollRestoration } from 'react-router-dom';
-
+import { useEffect, useState } from 'react';
 const SavedHomes = () => {
   const Homes = JSON.parse(localStorage.getItem('homes') || '[]');
 
-  return (
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setTimeout(setLoading, 500, false);
+  }, []);
+
+  return loading ? (
+    <div className="w-full min-h-screen flex justify-center items-center">
+      <span className="loading loading-spinner loading-lg"></span>
+    </div>
+  ) : (
     <div className="my-10  min-h-screen h-full">
       <Helmet>
         <title>Residence Hub || Saved Homes</title>

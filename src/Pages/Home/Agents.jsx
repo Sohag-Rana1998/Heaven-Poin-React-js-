@@ -25,7 +25,6 @@ const Agents = () => {
       <div
         data-aos="fade-down"
         data-aos-duration="1000"
-        data-aos-delay="200"
         className="text-center  mb-10"
       >
         <p className="font-bold">Meet our </p>
@@ -40,9 +39,9 @@ const Agents = () => {
         <Card
           data-aos="zoom-in"
           data-aos-duration="1000"
-          className="mt-6 w-full rounded-2xl "
+          className="mt-6  w-full rounded-2xl  "
         >
-          <div className=" w-full rounded-2xl h-56">
+          <div className="w-full rounded-2xl h-56 ">
             <img
               src="https://i.ibb.co/JjJXCY3/person3-500x328.webp"
               alt="card-image"
@@ -67,16 +66,16 @@ const Agents = () => {
           </CardBody>
           <CardFooter className="pt-0 flex justify-between">
             <div className="text-lg flex gap-3">
-              <FaFacebook className="cursor-pointer"></FaFacebook>
-              <FaInstagram className="cursor-pointer"></FaInstagram>
-              <FaTwitter className="cursor-pointer"></FaTwitter>
-              <FaLinkedin className="cursor-pointer"></FaLinkedin>
-              <FaPinterest className="cursor-pointer"></FaPinterest>
-              <FaVimeo className="cursor-pointer"></FaVimeo>
+              <FaFacebook className="cursor-pointer hover:scale-[120%] duration-500"></FaFacebook>
+              <FaInstagram className="cursor-pointer hover:scale-[120%] duration-500"></FaInstagram>
+              <FaTwitter className="cursor-pointer hover:scale-[120%] duration-500"></FaTwitter>
+              <FaLinkedin className="cursor-pointer hover:scale-[120%] duration-500"></FaLinkedin>
+              <FaPinterest className="cursor-pointer hover:scale-[120%] duration-500"></FaPinterest>
+              <FaVimeo className="cursor-pointer hover:scale-[120%] duration-500"></FaVimeo>
             </div>
             <div className="flex text-lg gap-3">
-              <FaMessage className="cursor-pointer"></FaMessage>
-              <FaPhone className="cursor-pointer"></FaPhone>
+              <FaMessage className="cursor-pointer hover:scale-[120%] duration-500"></FaMessage>
+              <FaPhone className="cursor-pointer hover:scale-[120%] duration-500"></FaPhone>
             </div>
           </CardFooter>
         </Card>
@@ -110,16 +109,16 @@ const Agents = () => {
           </CardBody>
           <CardFooter className="pt-0 flex justify-between">
             <div className="text-lg flex gap-3">
-              <FaFacebook className="cursor-pointer"></FaFacebook>
-              <FaInstagram className="cursor-pointer"></FaInstagram>
-              <FaTwitter className="cursor-pointer"></FaTwitter>
-              <FaLinkedin className="cursor-pointer"></FaLinkedin>
-              <FaPinterest className="cursor-pointer"></FaPinterest>
-              <FaVimeo className="cursor-pointer"></FaVimeo>
+              <FaFacebook className="cursor-pointer hover:scale-[120%] duration-500"></FaFacebook>
+              <FaInstagram className="cursor-pointer hover:scale-[120%] duration-500"></FaInstagram>
+              <FaTwitter className="cursor-pointer hover:scale-[120%] duration-500"></FaTwitter>
+              <FaLinkedin className="cursor-pointer hover:scale-[120%] duration-500"></FaLinkedin>
+              <FaPinterest className="cursor-pointer hover:scale-[120%] duration-500"></FaPinterest>
+              <FaVimeo className="cursor-pointer hover:scale-[120%] duration-500"></FaVimeo>
             </div>
             <div className="flex text-lg gap-3">
-              <FaMessage className="cursor-pointer"></FaMessage>
-              <FaPhone className="cursor-pointer"></FaPhone>
+              <FaMessage className="cursor-pointer hover:scale-[120%] duration-500"></FaMessage>
+              <FaPhone className="cursor-pointer hover:scale-[120%] duration-500"></FaPhone>
             </div>
           </CardFooter>
         </Card>
@@ -152,16 +151,16 @@ const Agents = () => {
           </CardBody>
           <CardFooter className="pt-0 flex justify-between">
             <div className="text-lg flex gap-3">
-              <FaFacebook className="cursor-pointer"></FaFacebook>
-              <FaInstagram className="cursor-pointer"></FaInstagram>
-              <FaTwitter className="cursor-pointer"></FaTwitter>
-              <FaLinkedin className="cursor-pointer"></FaLinkedin>
-              <FaPinterest className="cursor-pointer"></FaPinterest>
-              <FaVimeo className="cursor-pointer"></FaVimeo>
+              <FaFacebook className="cursor-pointer hover:scale-[120%] duration-500"></FaFacebook>
+              <FaInstagram className="cursor-pointer  hover:scale-[120%] duration-500"></FaInstagram>
+              <FaTwitter className="cursor-pointer hover:scale-[120%] duration-500"></FaTwitter>
+              <FaLinkedin className="cursor-pointer hover:scale-[120%] duration-500"></FaLinkedin>
+              <FaPinterest className="cursor-pointer hover:scale-[120%] duration-500"></FaPinterest>
+              <FaVimeo className="cursor-pointer hover:scale-[120%] duration-500"></FaVimeo>
             </div>
             <div className="flex text-lg gap-3">
-              <FaMessage className="cursor-pointer"></FaMessage>
-              <FaPhone className="cursor-pointer"></FaPhone>
+              <FaMessage className="cursor-pointer hover:scale-[120%] duration-500"></FaMessage>
+              <FaPhone className="cursor-pointer hover:scale-[120%] duration-500"></FaPhone>
             </div>
           </CardFooter>
         </Card>

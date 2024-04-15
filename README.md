@@ -22,9 +22,12 @@
 
 - I have used react icons for implement icon in my website. react icons is easy
   to use and get the icons in short time and using role is much easy.
-
+- I have use AOS and Animate.css packages to user interaction and make the
+  website beautiful. -I have used React leaflet to showing map of my office on
+  the contact us page because it free to use and easy to implement.
 - I have used Swiper slider component for slider purpose, because swiper slider
-  component very much easy to use and it has varies type of slide to use.
+  component very much easy to use and it has varies type of slide to use. I have
+  used it on the homepage banner and view property details page banner.
 
 - In my website, I have implement google firebase authentication method for
   registration, login logout and profile update purpose.

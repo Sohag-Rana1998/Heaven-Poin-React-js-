@@ -1,10 +1,25 @@
 import { FaHome, FaPhoneAlt } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 import { Button } from '@material-tailwind/react';
-import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
+import { MapContainer, Marker, Popup, TileLayer, Tooltip } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
+import { Icon } from 'leaflet';
+import { useEffect, useState } from 'react';
 const ContactUs = () => {
-  return (
+  const markerIcon = new Icon({
+    iconUrl: '/location-2955 (1).png',
+    iconSize: [45, 45],
+  });
+
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setTimeout(setLoading, 500, false);
+  }, []);
+  return loading ? (
+    <div className="w-full min-h-screen flex justify-center items-center">
+      <span className="loading loading-spinner loading-lg"></span>
+    </div>
+  ) : (
     <div>
       <div>
         <div className="animate__animated animate__fadeInDown w-full rounded-xl bg-[url(https://i.ibb.co/n0c4YZq/customercare.jpg)] bg-cover text-center mb-10  bg-no-repeat bg-center bg-opacity-10  ">
@@ -123,10 +138,9 @@ const ContactUs = () => {
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
-            <Marker position={[25.0318, 55.19]}>
-              <Popup>
-                Dubai Production City, Dubai, 0448, <br /> United Arab Emirates
-              </Popup>
+            <Marker position={[25.0318, 55.19]} icon={markerIcon}>
+              <Popup>Dubai Production City,United Arab Emirates</Popup>
+              <Tooltip>Dubai Production City,United Arab Emirates</Tooltip>
             </Marker>
           </MapContainer>
         </div>

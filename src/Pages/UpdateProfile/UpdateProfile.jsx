@@ -20,6 +20,10 @@ const UpdateProfile = () => {
     setName(user?.displayName);
     setPhoto(user?.photoURL);
   }, [user?.displayName, user?.photoURL]);
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(setLoading, 500, false);
+  }, []);
 
   const onChangeName = e => {
     e.preventDefault();

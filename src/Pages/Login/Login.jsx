@@ -126,6 +126,7 @@ const Login = () => {
                 type="email"
                 name="email"
                 id="email"
+                required
                 placeholder=" Email address"
                 className="w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-50 text-gray-800"
               />

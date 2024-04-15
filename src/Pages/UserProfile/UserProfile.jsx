@@ -1,11 +1,19 @@
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 import { Helmet } from 'react-helmet-async';
 
 const UserProfile = () => {
   const { user } = useContext(AuthContext);
-  return (
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setTimeout(setLoading, 500, false);
+  }, []);
+  return loading ? (
+    <div className="w-full min-h-screen flex justify-center items-center">
+      <span className="loading loading-spinner loading-lg"></span>
+    </div>
+  ) : (
     <div className="max-w-5xl animate__animated animate__zoomIn   mx-auto  my-16 bg-white shadow-xl rounded-lg text-gray-900">
       <Helmet>
         <title>Residence Hub || User Profile</title>
