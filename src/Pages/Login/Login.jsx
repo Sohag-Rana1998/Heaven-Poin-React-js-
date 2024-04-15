@@ -7,7 +7,7 @@ import {
 
 import { Button } from '@material-tailwind/react';
 import { Helmet } from 'react-helmet-async';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { IoEye, IoEyeOff } from 'react-icons/io5';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { reload } from 'firebase/auth';
@@ -99,7 +99,15 @@ const Login = () => {
       });
   };
 
-  return (
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setTimeout(setLoading, 500, false);
+  }, []);
+  return loading ? (
+    <div className="w-full min-h-screen flex justify-center items-center">
+      <span className="loading loading-spinner loading-lg"></span>
+    </div>
+  ) : (
     <div className="flex flex-col  justify-between items-center ">
       <Helmet>
         <title>RESIDENCE HUB || Login</title>

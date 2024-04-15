@@ -16,7 +16,7 @@ const UserProfile = () => {
   ) : (
     <div className="max-w-5xl animate__animated animate__zoomIn   mx-auto  my-16 bg-white shadow-xl rounded-lg text-gray-900">
       <Helmet>
-        <title>Residence Hub || User Profile</title>
+        <title>Residence Hub | User Profile</title>
       </Helmet>
       <div className="rounded-t-lg h-32 overflow-hidden">
         <img

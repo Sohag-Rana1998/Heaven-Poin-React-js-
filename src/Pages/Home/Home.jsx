@@ -19,7 +19,7 @@ const Home = () => {
   ) : (
     <div className="my-10">
       <Helmet>
-        <title>Residence Hub || Home</title>
+        <title className="uppercase">Residence Hub | Home</title>
       </Helmet>
       <Banner></Banner>
       <Estates></Estates>

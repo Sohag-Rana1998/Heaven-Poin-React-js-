@@ -72,10 +72,18 @@ const ViewDetails = () => {
     image_url3,
     description,
   } = estate;
-  return (
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setTimeout(setLoading, 500, false);
+  }, []);
+  return loading ? (
+    <div className="w-full min-h-screen flex justify-center items-center">
+      <span className="loading loading-spinner loading-lg"></span>
+    </div>
+  ) : (
     <div className="my-8 md:my-16">
       <Helmet>
-        <title>RESIDENCE HUB || Details </title>
+        <title>RESIDENCE HUB | Details </title>
       </Helmet>
 
       <div className="h-[150px]  animate__animated animate__fadeInDown w-full rounded-xl bg-[url(https://i.ibb.co/PtcPs7P/6.jpg)] text-center mb-10  bg-no-repeat bg-center bg-opacity-10">

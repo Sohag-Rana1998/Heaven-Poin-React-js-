@@ -59,7 +59,7 @@ const UpdateProfile = () => {
     return (
       <div className="container mx-auto my-10 flex flex-col lg:flex-row gap-10 justify-between p-5 bg-slate-200 border-2 border-gray-400 rounded-3xl h-auto">
         <Helmet>
-          <title>Residence Hub || Update Your Profile</title>
+          <title>Residence Hub | Update Your Profile</title>
         </Helmet>
         <div className="w-full lg:w-[50%]">
           <div className=" animate__animated animate__fadeInDown">

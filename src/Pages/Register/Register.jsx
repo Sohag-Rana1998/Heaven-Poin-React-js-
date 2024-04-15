@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 import { Button } from '@material-tailwind/react';
 import { Helmet } from 'react-helmet-async';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 import { IoEye, IoEyeOff } from 'react-icons/io5';
@@ -115,10 +115,18 @@ const Register = () => {
       });
   };
 
-  return (
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setTimeout(setLoading, 500, false);
+  }, []);
+  return loading ? (
+    <div className="w-full min-h-screen flex justify-center items-center">
+      <span className="loading loading-spinner loading-lg"></span>
+    </div>
+  ) : (
     <div className="flex flex-col justify-between items-center">
       <Helmet>
-        <title>RESIDENCE HUB || REGISTER</title>
+        <title>Residence Hub | Register</title>
       </Helmet>
       <div className="flex flex-col  max-w-lg w-full p-5 md:p-16 rounded-md  bg-green-100 border-2 my-5 shadow-xl border-purple-200 text-gray-800">
         <div className="mb-4 text-center">

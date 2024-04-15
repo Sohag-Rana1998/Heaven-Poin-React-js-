@@ -5,6 +5,7 @@ import { MapContainer, Marker, Popup, TileLayer, Tooltip } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { Icon } from 'leaflet';
 import { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 const ContactUs = () => {
   const markerIcon = new Icon({
     iconUrl: '/location-2955 (1).png',
@@ -21,6 +22,9 @@ const ContactUs = () => {
     </div>
   ) : (
     <div>
+      <Helmet>
+        <title>Residence Hub | Contact Us</title>
+      </Helmet>
       <div>
         <div className="animate__animated animate__fadeInDown w-full rounded-xl bg-[url(https://i.ibb.co/n0c4YZq/customercare.jpg)] bg-cover text-center mb-10  bg-no-repeat bg-center bg-opacity-10  ">
           <div className=" h-full w-full rounded-xl flex flex-col md:flex-row items-center justify-between bg-black  bg-opacity-45 p-10">
