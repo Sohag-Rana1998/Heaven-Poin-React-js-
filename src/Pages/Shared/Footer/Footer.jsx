@@ -1,3 +1,4 @@
+import logo from '../../../../public/home_553416.png';
 import { Typography } from '@material-tailwind/react';
 import {
   FaFacebook,
@@ -30,8 +31,9 @@ const Footer = () => {
       <footer className="relative max-w-7xl mx-auto p-5">
         <div className="">
           <div className="flex flex-col lg:flex-row justify-between items-center text-center ">
-            <div className="text-3xl font-bold text-light-blue-600">
-              RESIDENCE HUB
+            <div className="text-3xl flex flex-col items-center font-bold text-light-blue-600">
+              <img className="w-24 h-24" src={logo} alt="" />
+              <h2> RESIDENCE HUB</h2>
             </div>
             <div className="mx-auto grid w-full grid-cols-1 gap-8 py-12 md:grid-cols-2 lg:grid-cols-3">
               {SITEMAP.map(({ title, links }, key) => (

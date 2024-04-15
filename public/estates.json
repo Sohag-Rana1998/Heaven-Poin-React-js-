@@ -8,7 +8,14 @@
     "status": "Sale",
     "area": "2000 sq ft",
     "location": "123 Main Street, Anytown, USA",
-    "facilities": ["living room", "backyard garden", "spacious kitchen"],
+    "facilities": [
+      "living room",
+
+      "attached garage",
+
+      "backyard garden",
+      "spacious kitchen"
+    ],
     "image_url": "https://i.ibb.co/WWdkvxh/Family-house.webp"
   },
   {
@@ -19,7 +26,12 @@
     "price": "$250,000",
     "area": "1600 sq ft",
     "location": "456 Oak Avenue, Suburbia, USA",
-    "facilities": ["living room", "community pool", "playground"],
+    "facilities": [
+      "living room",
+      "community pool",
+      "backyard garden",
+      "playground"
+    ],
     "image_url": "https://i.ibb.co/HV1qZRv/townHall.webp"
   },
   {
@@ -31,7 +43,13 @@
     "status": "Rent",
     "area": "800 sq ft",
     "location": "789 Elm Street, City Center, USA",
-    "facilities": ["living room", "close to restaurants", "cafes"],
+    "facilities": [
+      "living room",
+      "close to restaurants",
+      "backyard garden",
+      "play-ground",
+      "cafes"
+    ],
     "image_url": "https://i.ibb.co/Nyp3xk7/apartments.webp"
   },
   {
@@ -43,7 +61,12 @@
     "status": "Rent",
     "area": "Varies",
     "location": "101 University Avenue, College Town, USA",
-    "facilities": ["study lounge", "gym", "furnished rooms"],
+    "facilities": [
+      "study lounge",
+      "furnished rooms",
+      "community clubhouse",
+      "gym"
+    ],
     "image_url": "https://i.ibb.co/MBHwjbv/695-Exterior-773x409.jpg"
   },
   {
@@ -88,7 +111,12 @@
     "status": "Sale",
     "area": "2800 sq ft",
     "location": "222 Pine Street, Suburbia, USA",
-    "facilities": ["living room", "finished basement", "deck"],
+    "facilities": [
+      "living room",
+      "finished basement",
+      "close to restaurants",
+      "deck"
+    ],
     "image_url": "https://i.ibb.co/j5ZxRdn/Family-house1.jpg"
   },
   {
