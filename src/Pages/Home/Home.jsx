@@ -1,9 +1,10 @@
 import { Helmet } from 'react-helmet-async';
 import Agents from './Agents';
-import Banner from './Banner';
+
 import Estates from './Estates/Estates';
 import Testimonial from './Testimonial';
 import { ScrollRestoration } from 'react-router-dom';
+import Banner from './Banner/Banner';
 
 const Home = () => {
   return (

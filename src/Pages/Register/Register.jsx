@@ -137,6 +137,7 @@ const Register = () => {
                 type="text"
                 name="name"
                 id="name"
+                required
                 placeholder="Your Name"
                 className="w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-50 text-gray-800"
               />
@@ -160,6 +161,7 @@ const Register = () => {
               <input
                 type="email"
                 name="email"
+                required
                 id="email"
                 placeholder="Email address"
                 className="w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-50 text-gray-800"
@@ -183,9 +185,9 @@ const Register = () => {
                   type={type ? 'text' : 'password'}
                   name="password"
                   id="password"
+                  required
                   placeholder="password"
                   className="w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-50 text-gray-800"
-                  required
                 />
                 <span
                   className="absolute right-5 top-2 "

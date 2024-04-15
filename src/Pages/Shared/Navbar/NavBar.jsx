@@ -99,7 +99,7 @@ const NavBar = () => {
   );
 
   return (
-    <div className="navbar max-w-7xl container  mx-auto  bg-base-100">
+    <div className="navbar max-w-7xl fixed z-30 container pt-3 mx-auto  bg-base-100">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -135,7 +135,7 @@ const NavBar = () => {
                     />
                     <button
                       onClick={handleLogout}
-                      className="btn bg-[#23BE0A] hover:bg-blue-gray-900   mr-3 text-white"
+                      className="btn bg-blue-600 hover:bg-blue-gray-900   mr-3 text-white w-full"
                     >
                       Log Out
                     </button>
@@ -154,7 +154,7 @@ const NavBar = () => {
                 ) : (
                   <Link to={'/login'}>
                     {' '}
-                    <button className="btn bg-[#23BE0A] mr-3 text-white">
+                    <button className="btn bg-blue-600 w-full mr-3 text-white">
                       Log In
                     </button>
                   </Link>
@@ -185,7 +185,7 @@ const NavBar = () => {
               />
               <button
                 onClick={handleLogout}
-                className="btn bg-[#23BE0A] hover:bg-blue-gray-900   mr-3 text-white"
+                className="btn bg-blue-600 hover:bg-blue-gray-900   mr-3 text-white"
               >
                 Log Out
               </button>
@@ -204,7 +204,7 @@ const NavBar = () => {
           ) : (
             <Link to={'/login'}>
               {' '}
-              <button className="btn bg-[#23BE0A] mr-3 text-white">
+              <button className="btn bg-blue-600 mr-3 text-white">
                 Log In
               </button>
             </Link>

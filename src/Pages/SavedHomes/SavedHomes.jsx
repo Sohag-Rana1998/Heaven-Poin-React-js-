@@ -14,7 +14,7 @@ const SavedHomes = () => {
   const Homes = JSON.parse(localStorage.getItem('homes') || '[]');
 
   return (
-    <div className="my-10  min-h-screen">
+    <div className="my-10  min-h-screen h-full">
       <Helmet>
         <title>Residence Hub || Saved Homes</title>
       </Helmet>
@@ -63,7 +63,7 @@ const SavedHomes = () => {
                       </p>
                     </div>
                   </CardHeader>
-                  <CardBody className="flex flex-col h-[250px]  justify-between ">
+                  <CardBody className="flex flex-col h-auto md:h-[250px]  justify-between">
                     <div>
                       <div>
                         <Typography variant="h4" color="blue-gray">

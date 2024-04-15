@@ -53,13 +53,13 @@ const UpdateProfile = () => {
     );
   } else {
     return (
-      <div className="container mx-auto my-10 flex flex-col lg:flex-row gap-5 justify-between p-5 bg-slate-200 border-2 border-gray-400 rounded-3xl h-auto">
+      <div className="container mx-auto my-10 flex flex-col lg:flex-row gap-10 justify-between p-5 bg-slate-200 border-2 border-gray-400 rounded-3xl h-auto">
         <Helmet>
           <title>Residence Hub || Update Your Profile</title>
         </Helmet>
-        <div className="w-full md:w-[50%]">
+        <div className="w-full lg:w-[50%]">
           <div className=" animate__animated animate__fadeInDown">
-            <h1 className="text-4xl font-bold text-center">
+            <h1 className="text-4xl underline font-bold text-center">
               Your Current Profile:
             </h1>
           </div>
@@ -74,22 +74,22 @@ const UpdateProfile = () => {
               )}
             </div>
             <div className="space-y-3">
-              <h2 className="text-2xl">
+              <h2 className="text-xl">
                 {' '}
                 <span className="font-bold">User Name:</span>
                 {user?.displayName || ''}
               </h2>
-              <h2 className="text-2xl">
+              <h2 className="text-xl">
                 {' '}
-                <span className="font-bold">User Email:</span>{' '}
+                <span className="font-bold text-nowrap">User Email:</span>{' '}
                 {user?.email || ''}
               </h2>
             </div>
           </div>
         </div>
-        <div className="w-full md:w-[50%]   ">
+        <div className="w-full lg:w-[50%]   ">
           <div>
-            <h1 className="text-4xl font-bold text-center animate__animated animate__fadeInDown">
+            <h1 className="text-4xl font-bold underline mb-5 text-center animate__animated animate__fadeInDown">
               Update Your Profile
             </h1>
 
@@ -127,7 +127,7 @@ const UpdateProfile = () => {
                   onClick={handleUpdate}
                   className="btn bg-blue-700 hover:bg-blue-gray-900 text-white "
                 >
-                  Save Changes
+                  Update Now
                 </button>
               </div>
             </div>

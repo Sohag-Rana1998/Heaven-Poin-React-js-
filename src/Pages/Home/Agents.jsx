@@ -46,10 +46,8 @@ const Agents = () => {
             <img
               src="https://i.ibb.co/JjJXCY3/person3-500x328.webp"
               alt="card-image"
-              className="w-full h-full rounded-2xl"
+              className="w-full h-full rounded-t-2xl"
             />
-            {/* <img src="https://i.ibb.co/DVwfwkR/person2-500x328.jpg" />
-          <img src="https://i.ibb.co/L8VGtmW/person-sam-davies-500x328.webp" /> */}
           </div>
           <CardBody>
             <Typography variant="h5" color="blue-gray" className="mb-2">
@@ -57,8 +55,14 @@ const Agents = () => {
               <p className="text-sm">Realtor</p>
             </Typography>
             <Typography>
-              Whether it is working with a first time home buyer, a luxury home
-              listing or a seasoned inv
+              Janets knowledge, honesty, integrity, and fairness have been
+              evident throughout her career. In addition, she possesses a keen
+              sense of the local luxury real estate climate, allowing her to
+              guide her clients in acquisitions of primary residences, second
+              homes, and investment properties. She understands the importance
+              of providing a truly personalized service to her clients, always
+              putting their needs ahead of her own and paying close attention to
+              every aspect of the transaction.
             </Typography>
           </CardBody>
           <CardFooter className="pt-0 flex justify-between">
@@ -85,7 +89,7 @@ const Agents = () => {
             <img
               src="https://i.ibb.co/DVwfwkR/person2-500x328.jpg"
               alt="card-image"
-              className="w-full h-full rounded-2xl"
+              className="w-full h-full rounded-t-2xl"
             />
           </div>
 
@@ -95,8 +99,13 @@ const Agents = () => {
               <p className="text-sm">Commercial Broker </p>
             </Typography>
             <Typography>
-              As an award-winning Realtor ® and CEO of The Egypt Sherrod Real
-              Estate Group, Egypts dail
+              As a fourth generation realtor, I was raised in a family where
+              real estate was the primary occupation. She has a passion for the
+              business and a steadfast dedication to her clients. As a licensed
+              agent in both California and Arizona, I bring over five years of
+              experience to the table and is adept at handling any transaction,
+              regardless of property type or price point. I am highly motivated,
+              determined and hands on with each sale from start to finish.
             </Typography>
           </CardBody>
           <CardFooter className="pt-0 flex justify-between">
@@ -123,7 +132,7 @@ const Agents = () => {
             <img
               src="https://i.ibb.co/L8VGtmW/person-sam-davies-500x328.webp"
               alt="card-image"
-              className="w-full h-full rounded-2xl"
+              className="w-full h-full rounded-t-2xl"
             />
           </div>
           <CardBody>
@@ -132,8 +141,13 @@ const Agents = () => {
               <p className="text-sm">Sales person</p>
             </Typography>
             <Typography>
-              There are many variations of passages of Lorem Ipsum available,
-              but the majority have suff
+              Whether it is working with a first time home buyer, a luxury home
+              listing or a seasoned investor, Michael prides himself on his
+              unparalleled service with an aptitude for problem solving
+              something essential for navigating clients through the challenges
+              of todays real estate market. My focus is always on serving my
+              clients with honesty, integrity and discretion as a dependable and
+              knowledgeable broker committed to exceptional results.
             </Typography>
           </CardBody>
           <CardFooter className="pt-0 flex justify-between">

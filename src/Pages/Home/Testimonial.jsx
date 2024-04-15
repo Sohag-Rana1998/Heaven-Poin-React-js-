@@ -1,4 +1,4 @@
-import { Typography, Avatar, Rating } from '@material-tailwind/react';
+import { Typography, Avatar, Rating, Card } from '@material-tailwind/react';
 import { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
@@ -15,7 +15,7 @@ const Testimonial = () => {
   }, []);
 
   return (
-    <div className="mt-20">
+    <div className="mt-20 container mx-auto">
       <div
         data-aos="fade-up"
         data-aos-duration="1000"
@@ -35,22 +35,21 @@ const Testimonial = () => {
         className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-10"
       >
         {testimonials?.map(test => (
-          <div
-            key={test.id}
-            className="p-5 flex flex-col justify-center items-center bg-slate-100 shadow-lg"
-          >
-            <Avatar src={test.img} alt="image" size="xl" />
-            <Typography variant="h6" className="mt-2">
-              {test.author}
-            </Typography>
-            <Typography color="gray" className="mb-4 font-sm text-sm">
-              {test.author_designation}
-            </Typography>
-            <Typography color="gray" className="mb-4 font-normal">
-              {test.review}
-            </Typography>
-            <Rating value={5} readonly />
-          </div>
+          <Card key={test.id} className="container mx-auto">
+            <div className="p-5 flex flex-col justify-center items-center bg-slate-100 shadow-lg">
+              <Avatar src={test.img} alt="image" size="xl" />
+              <Typography variant="h6" className="mt-2">
+                {test.author}
+              </Typography>
+              <Typography color="gray" className="mb-4 font-sm text-sm">
+                {test.author_designation}
+              </Typography>
+              <Typography color="gray" className="mb-4 font-normal">
+                {test.review}
+              </Typography>
+              <Rating value={5} readonly />
+            </div>
+          </Card>
         ))}
       </div>
     </div>

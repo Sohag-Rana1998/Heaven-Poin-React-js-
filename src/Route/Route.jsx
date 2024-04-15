@@ -69,7 +69,11 @@ const router = createBrowserRouter([
       },
       {
         path: '/saved-homes',
-        element: <SavedHomes></SavedHomes>,
+        element: (
+          <PrivateRoute>
+            <SavedHomes></SavedHomes>
+          </PrivateRoute>
+        ),
       },
       {
         path: '/property-estate',

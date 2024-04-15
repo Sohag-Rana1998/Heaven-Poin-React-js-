@@ -56,7 +56,7 @@ const SingleProperty = ({ estate }) => {
             </p>
           </div>
         </CardHeader>
-        <CardBody className="flex flex-col  justify-between h-auto md:h-[340px] ">
+        <CardBody className="flex flex-col  justify-between h-full md:h-[360px] lg:h-[340px]">
           <div>
             <div>
               <Typography variant="h4" color="blue-gray">
@@ -73,7 +73,7 @@ const SingleProperty = ({ estate }) => {
                 <Typography
                   variant="lead"
                   color="gray"
-                  className=" font-lg text-xl"
+                  className=" font-lg text-lg"
                 >
                   <span className="font-bold">Area:</span>
                   {area}

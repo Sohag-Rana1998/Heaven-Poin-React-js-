@@ -1,18 +1,27 @@
-import {
-  Button,
-  Card,
-  CardBody,
-  Carousel,
-  IconButton,
-  Typography,
-} from '@material-tailwind/react';
-import { useEffect, useState } from 'react';
+import { Button, Card, CardBody, Typography } from '@material-tailwind/react';
+import { useContext, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { FaLocationDot } from 'react-icons/fa6';
 import { ScrollRestoration, useLoaderData, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { useRef } from 'react';
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+import '../..//styles.css';
+
+// import required modules
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const ViewDetails = () => {
+  const { user } = useContext(AuthContext);
+
   const { id } = useParams();
   const data = useLoaderData();
   const [estate, setEstate] = useState({});
@@ -29,7 +38,6 @@ const ViewDetails = () => {
 
   const handleSavedHomes = home => {
     const isExist = Homes.find(house => house.id === home.id);
-
     if (!isExist) {
       setHomes([...Homes, home]);
 
@@ -43,6 +51,13 @@ const ViewDetails = () => {
   useEffect(() => {
     localStorage.setItem('homes', JSON.stringify(Homes));
   }, [Homes]);
+
+  const progressCircle = useRef(null);
+  const progressContent = useRef(null);
+  const onAutoplayTimeLeft = (s, time, progress) => {
+    progressCircle.current.style.setProperty('--progress', 1 - progress);
+    progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
+  };
 
   const {
     estate_title,
@@ -70,7 +85,7 @@ const ViewDetails = () => {
           </h1>
         </div>
       </div>
-      <Card>
+      <div>
         <Typography variant="h2" color="black">
           {estate_title}
         </Typography>
@@ -82,77 +97,59 @@ const ViewDetails = () => {
           <FaLocationDot />
           {location}
         </Typography>
-        <div className="h-[450px] relative rounded-xl">
-          <Carousel
-            className="rounded-xl"
-            prevArrow={({ handlePrev }) => (
-              <IconButton
-                variant="text"
-                color="white"
-                size="lg"
-                onClick={handlePrev}
-                className="!absolute bottom-10 md:bottom-4 !left-[25%] md:!left-[45%] bg-black bg-opacity-60 -translate-y-2/4"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={2}
-                  stroke="currentColor"
-                  className="h-6 w-6 md:h-10 md:w-10"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
-                  />
+      </div>
+      <Card>
+        <div className="rounded-xl">
+          <div className=" relative mx-auto">
+            <Swiper
+              spaceBetween={30}
+              centeredSlides={true}
+              autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+              }}
+              pagination={{
+                clickable: true,
+              }}
+              navigation={true}
+              modules={[Autoplay, Pagination, Navigation]}
+              onAutoplayTimeLeft={onAutoplayTimeLeft}
+              className="mySwiper h-[500px]  rounded-2xl"
+            >
+              <SwiperSlide>
+                {' '}
+                <img
+                  src={image_url}
+                  alt="image 1"
+                  className="h-full w-full object-fit"
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img
+                  src={image_url2}
+                  alt="image 2"
+                  className="h-full w-full object-fit"
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img
+                  src={image_url3}
+                  alt="image 3"
+                  className="h-full w-full object-fit"
+                />
+              </SwiperSlide>
+
+              <div className="autoplay-progress" slot="container-end">
+                <svg viewBox="0 0 48 48" ref={progressCircle}>
+                  <circle cx="24" cy="24" r="20"></circle>
                 </svg>
-              </IconButton>
-            )}
-            nextArrow={({ handleNext }) => (
-              <IconButton
-                variant="text"
-                color="white"
-                size="lg"
-                onClick={handleNext}
-                className="!absolute bottom-10 md:bottom-4 !right-[25%] md:!right-[45%] bg-black bg-opacity-60 -translate-y-2/4"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={2}
-                  stroke="currentColor"
-                  className=" h-6 w-6 md:h-10 md:w-10"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-                  />
-                </svg>
-              </IconButton>
-            )}
-          >
-            <img
-              src={image_url}
-              alt="image 1"
-              className="h-full w-full object-fit"
-            />
-            <img
-              src={image_url2}
-              alt="image 2"
-              className="h-full w-full object-fit"
-            />
-            <img
-              src={image_url3}
-              alt="image 3"
-              className="h-full w-full object-fit"
-            />
-          </Carousel>
-          <button className="px-10 py-4 rounded-br-xl bg-blue-500 absolute z-10 right-0 bottom-0 text-white text-xl font-bold bg-opacity-80">
-            {status}
-          </button>
+                <span ref={progressContent}></span>
+              </div>
+            </Swiper>
+            <button className="px-10 py-4 rounded-tr-xl bg-blue-500 absolute z-10 right-0 top-0 text-white text-xl font-bold bg-opacity-80">
+              {status}
+            </button>
+          </div>
         </div>
         <CardBody className="flex flex-col  justify-between h-auto  ">
           <div>
