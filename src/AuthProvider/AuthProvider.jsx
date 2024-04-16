@@ -9,6 +9,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateProfile,
 } from 'firebase/auth';
 import app from '../FireBase/firebase.config';
 import Swal from 'sweetalert2';
@@ -27,7 +28,7 @@ const AuthProvider = ({ children }) => {
       console.log(currentUser);
       setLoading(true);
       setUser(currentUser);
-      setTimeout(setLoading, 1000, false);
+      setTimeout(setLoading, 500, false);
     });
 
     return () => {
@@ -35,8 +36,13 @@ const AuthProvider = ({ children }) => {
     };
   }, [auth]);
 
-  const handleLoading = type => {
-    setLoading(type);
+  const handleUpdateProfile = (name, photo) => {
+    updateProfile(auth.currentUser, {
+      displayName: name,
+      photoURL: photo,
+    }).then(() => {
+      setUser({ ...user, displayName: name, photoURL: photo });
+    });
   };
 
   const logOut = () => {
@@ -77,7 +83,7 @@ const AuthProvider = ({ children }) => {
     signInWithGoogle,
     logOut,
     loading,
-    handleLoading,
+    handleUpdateProfile,
   };
 
   return loading ? (

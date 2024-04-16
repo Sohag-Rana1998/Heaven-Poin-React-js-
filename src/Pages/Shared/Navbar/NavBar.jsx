@@ -4,7 +4,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
 
 const NavBar = () => {
-  const { user, logOut, loading } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
 
   const [type, setType] = useState(false);
   const handleHover = () => {
@@ -100,11 +100,7 @@ const NavBar = () => {
     </div>
   );
 
-  return loading ? (
-    <div className="w-full min-h-screen flex justify-center items-center">
-      <span className="loading loading-spinner loading-lg"></span>
-    </div>
-  ) : (
+  return (
     <div className="navbar max-w-7xl fixed z-30 container pt-3 mx-auto  bg-base-100">
       <div className="navbar-start">
         <div className="dropdown">

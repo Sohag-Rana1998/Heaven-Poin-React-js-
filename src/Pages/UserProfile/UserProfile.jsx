@@ -28,7 +28,7 @@ const UserProfile = () => {
       <div className="mx-auto w-32 h-32 relative -mt-16 border-4 border-white rounded-full overflow-hidden">
         <img className="object-cover object-center h-32" src={user?.photoURL} />
       </div>
-      <div className="w-full px-4 md:w-1/4 mx-auto mt-2">
+      <div className="w-full pl-2 md:pl-24  md:w-2/4 mx-auto mt-2">
         <h2 className="font-semibold">
           Name:{user?.displayName || 'Not Found'}
         </h2>

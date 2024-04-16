@@ -2,16 +2,14 @@ import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 import { Helmet } from 'react-helmet-async';
-import { getAuth, updateProfile } from 'firebase/auth';
-import app from '../../FireBase/firebase.config';
 
 import { ScrollRestoration } from 'react-router-dom';
 
-import { toast } from 'react-toastify';
+import Swal from 'sweetalert2';
 
 const UpdateProfile = () => {
-  const { user, handleLoading } = useContext(AuthContext);
-  const auth = getAuth(app);
+  const { user, handleUpdateProfile } = useContext(AuthContext);
+
   const [name, setName] = useState('');
   const [photo, setPhoto] = useState('');
 
@@ -41,13 +39,15 @@ const UpdateProfile = () => {
   };
 
   const handleUpdate = () => {
-    handleLoading(true);
-    updateProfile(auth.currentUser, {
-      displayName: name,
-      photoURL: photo,
+    setLoader(true);
+    handleUpdateProfile(name, photo);
+    setTimeout(setLoader, 800, false);
+    Swal.fire({
+      icon: 'success',
+      title: 'Profile Updated',
+      showConfirmButton: false,
+      timer: 1500,
     });
-    setTimeout(handleLoading, 1000, false);
-    setTimeout(toast.success('Profile updated successfully'), 1000);
   };
 
   if (loader) {
