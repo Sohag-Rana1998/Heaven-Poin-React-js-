@@ -10,21 +10,28 @@ import { ScrollRestoration } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const UpdateProfile = () => {
-  const { user } = useContext(AuthContext);
+  const { user, handleLoading } = useContext(AuthContext);
   const auth = getAuth(app);
   const [name, setName] = useState('');
   const [photo, setPhoto] = useState('');
 
-  const [loading, setLoading] = useState(false);
+  const [loader, setLoader] = useState(false);
 
   useEffect(() => {
     setName(user?.displayName);
     setPhoto(user?.photoURL);
   }, [user?.displayName, user?.photoURL]);
   useEffect(() => {
-    setLoading(true);
-    setTimeout(setLoading, 500, false);
+    setLoader(true);
+    setTimeout(setLoader, 500, false);
   }, []);
+
+  const onChangeName = e => {
+    e.preventDefault();
+    const newName = e.target.value;
+    console.log(newName);
+    setName(newName);
+  };
 
   const onChangePhoto = e => {
     e.preventDefault();
@@ -34,17 +41,16 @@ const UpdateProfile = () => {
   };
 
   const handleUpdate = () => {
-    setLoading(true);
+    handleLoading(true);
     updateProfile(auth.currentUser, {
       displayName: name,
       photoURL: photo,
     });
-    setTimeout(setLoading, 1500, false);
-
-    setTimeout(toast.success('Profile updated successfully'), 1500);
+    setTimeout(handleLoading, 1000, false);
+    setTimeout(toast.success('Profile updated successfully'), 1000);
   };
 
-  if (loading) {
+  if (loader) {
     return (
       <div className="w-full min-h-screen flex justify-center items-center">
         <span className="loading loading-spinner loading-lg"></span>
@@ -97,6 +103,7 @@ const UpdateProfile = () => {
                 <input
                   type="text"
                   className="input w-full bg-gray-300 mb-3 "
+                  onChange={e => onChangeName(e)}
                   value={name}
                 />
               </div>
@@ -114,7 +121,7 @@ const UpdateProfile = () => {
                 <input
                   type="email"
                   className="input bg-gray-300 w-full mb-3 "
-                  value={user?.email || ''}
+                  value={user?.email || 'Not Found'}
                 />
               </div>
 

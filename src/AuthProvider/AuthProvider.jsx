@@ -19,14 +19,15 @@ export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const auth = getAuth(app);
 
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, currentUser => {
       console.log(currentUser);
+      setLoading(true);
       setUser(currentUser);
-      setTimeout(setLoading, 800, false);
+      setTimeout(setLoading, 1000, false);
     });
 
     return () => {
@@ -34,8 +35,12 @@ const AuthProvider = ({ children }) => {
     };
   }, [auth]);
 
+  const handleLoading = type => {
+    setLoading(type);
+  };
+
   const logOut = () => {
-    setLoading(true);
+    setLoading(false);
     signOut(auth);
     Swal.fire({
       icon: 'success',
@@ -72,6 +77,7 @@ const AuthProvider = ({ children }) => {
     signInWithGoogle,
     logOut,
     loading,
+    handleLoading,
   };
 
   return loading ? (

@@ -29,8 +29,10 @@ const UserProfile = () => {
         <img className="object-cover object-center h-32" src={user?.photoURL} />
       </div>
       <div className="w-full px-4 md:w-1/4 mx-auto mt-2">
-        <h2 className="font-semibold">Name:{user?.displayName}</h2>
-        <p className=" font-semibold">Email:{user?.email}</p>
+        <h2 className="font-semibold">
+          Name:{user?.displayName || 'Not Found'}
+        </h2>
+        <p className=" font-semibold">Email: {user?.email || 'Not Found'}</p>
       </div>
 
       <div className="p-4 border-t  mt-2">
