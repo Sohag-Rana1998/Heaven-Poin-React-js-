@@ -4,10 +4,7 @@ import {
   CardFooter,
   Typography,
 } from '@material-tailwind/react';
-import AOS from 'aos';
-import 'aos/dist/aos.css'; // You can also use <link> for styles
-// ..
-AOS.init();
+
 import {
   FaFacebook,
   FaInstagram,
@@ -37,7 +34,7 @@ const Agents = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-5">
         <Card
-          data-aos="zoom-in"
+          data-aos="flip-right"
           data-aos-duration="1000"
           className="mt-6  w-full rounded-2xl  "
         >
@@ -80,7 +77,7 @@ const Agents = () => {
           </CardFooter>
         </Card>
         <Card
-          data-aos="zoom-in"
+          data-aos="flip-down"
           data-aos-duration="1000"
           className="mt-6 w-full"
         >
@@ -123,7 +120,7 @@ const Agents = () => {
           </CardFooter>
         </Card>
         <Card
-          data-aos="zoom-in"
+          data-aos="flip-left"
           data-aos-duration="1000"
           className="mt-6 w-full px-3"
         >

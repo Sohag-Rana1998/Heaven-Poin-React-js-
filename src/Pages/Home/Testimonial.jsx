@@ -36,7 +36,7 @@ const Testimonial = () => {
       >
         {testimonials?.map(test => (
           <Card key={test.id} className="container mx-auto">
-            <div className="p-5 hover:scale-[110%] duration-500 flex flex-col justify-center items-center bg-slate-100 shadow-lg">
+            <div className="p-5 hover:scale-[110%] duration-500 rounded-lg flex flex-col justify-center items-center bg-slate-100 shadow-lg">
               <Avatar src={test.img} alt="image" size="xl" />
               <Typography variant="h6" className="mt-2">
                 {test.author}

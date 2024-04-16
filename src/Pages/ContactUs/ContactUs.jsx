@@ -6,6 +6,7 @@ import 'leaflet/dist/leaflet.css';
 import { Icon } from 'leaflet';
 import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
+import Swal from 'sweetalert2';
 const ContactUs = () => {
   const markerIcon = new Icon({
     iconUrl: '/location-2955 (1).png',
@@ -16,6 +17,20 @@ const ContactUs = () => {
   useEffect(() => {
     setTimeout(setLoading, 500, false);
   }, []);
+
+  const handleSent = () => {
+    setLoading(true);
+    setTimeout(() => {
+      setTimeout(setLoading, 500, false);
+      Swal.fire({
+        icon: 'success',
+        title: 'Message Sent Successfully',
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    }, 500);
+  };
+
   return loading ? (
     <div className="w-full min-h-screen flex justify-center items-center">
       <span className="loading loading-spinner loading-lg"></span>
@@ -34,8 +49,8 @@ const ContactUs = () => {
               data-aos-delay="1000"
               className="text-white text-center md:text-left lg:text-left pl-4 lg:pl-14"
             >
-              <h1 className="text-5xl font-play  font-bold ">Get In Touch</h1>
-              <p className="font-work">
+              <h1 className="text-5xl   font-bold mb-4">Get In Touch</h1>
+              <p className="">
                 Want to get in touch? We would love <br /> to hear from you.
                 Here is away how you can reach us.
               </p>
@@ -44,7 +59,7 @@ const ContactUs = () => {
               data-aos="zoom-in"
               data-aos-duration="1000"
               data-aos-delay="1000"
-              className="bg-white w-full md:w-[360px] border-2 border-gray-400  rounded-xl p-5 md:p-10"
+              className="bg-white text-black w-full md:w-[360px] border-2 border-gray-400  rounded-xl p-5 md:p-10"
             >
               <h2 className="text-xl md:text-3xl font-bold mb-4">
                 How To Find Us
@@ -85,7 +100,7 @@ const ContactUs = () => {
 
       <div className="w-full bg-slate-100  rounded-md p-5 ">
         <div className=" w-full  mx-auto rounded-xl mt-5">
-          <h2 className="text-xl md:text-3xl font-bold mb-3">
+          <h2 className="text-xl text-black md:text-3xl font-bold mb-3">
             Give Us Your Message:
           </h2>
           <div>
@@ -115,6 +130,7 @@ const ContactUs = () => {
               ></textarea>
               <div className="w-full flex justify-end">
                 <Button
+                  onClick={handleSent}
                   size="lg"
                   className="text-white font-bold w-full hover:scale-[110%] hover:bg-gray-900 md:w-60 bg-orange-600"
                 >

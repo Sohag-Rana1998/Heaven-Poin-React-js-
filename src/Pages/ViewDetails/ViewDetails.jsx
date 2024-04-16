@@ -1,5 +1,5 @@
 import { Button, Card, CardBody, Typography } from '@material-tailwind/react';
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { FaLocationDot } from 'react-icons/fa6';
 import { ScrollRestoration, useLoaderData, useParams } from 'react-router-dom';
@@ -17,11 +17,8 @@ import '../..//styles.css';
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const ViewDetails = () => {
-  const { user } = useContext(AuthContext);
-
   const { id } = useParams();
   const data = useLoaderData();
   const [estate, setEstate] = useState({});
@@ -94,12 +91,9 @@ const ViewDetails = () => {
         </div>
       </div>
       <div>
-        <Typography variant="h2" color="black">
-          {estate_title}
-        </Typography>
+        <Typography variant="h2">{estate_title}</Typography>
         <Typography
           variant="lead"
-          color="black"
           className=" font-lg text-lg flex items-center gap-2 mb-3"
         >
           <FaLocationDot />

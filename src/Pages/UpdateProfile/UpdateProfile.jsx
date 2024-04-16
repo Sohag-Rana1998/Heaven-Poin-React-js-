@@ -57,7 +57,7 @@ const UpdateProfile = () => {
     );
   } else {
     return (
-      <div className="container mx-auto my-10 flex flex-col lg:flex-row gap-10 justify-between p-5 bg-slate-200 border-2 border-gray-400 rounded-3xl h-auto">
+      <div className="container text-black mx-auto my-10 flex flex-col lg:flex-row gap-10 justify-between p-5 bg-slate-200 border-2 border-gray-400 rounded-3xl h-auto">
         <Helmet>
           <title>Residence Hub | Update Your Profile</title>
         </Helmet>
@@ -86,7 +86,7 @@ const UpdateProfile = () => {
               <h2 className="text-xl">
                 {' '}
                 <span className="font-bold text-nowrap">User Email:</span>{' '}
-                {user?.email || ''}
+                {user?.email || 'Not Found'}
               </h2>
             </div>
           </div>
@@ -102,7 +102,7 @@ const UpdateProfile = () => {
                 <h2> Your Name:</h2>
                 <input
                   type="text"
-                  className="input w-full mb-3"
+                  className="input w-full bg-gray-300 mb-3 "
                   value={name}
                   onChange={e => onChangeName(e)}
                 />
@@ -111,18 +111,9 @@ const UpdateProfile = () => {
                 <h2> Your Photo URL:</h2>
                 <input
                   type="text"
-                  className="input  w-full mb-3"
+                  className="input bg-gray-300 w-full mb-3 "
                   value={photo}
                   onChange={e => onChangePhoto(e)}
-                />
-              </div>
-              <div>
-                <h2> Your Email:</h2>
-                <input
-                  type="text"
-                  className="input  w-full mb-3"
-                  value={user?.email || 'Not Found'}
-                  onChange={e => onChangePhoto(e.target.value)}
                 />
               </div>
 

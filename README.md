@@ -49,7 +49,7 @@
   button. And user can visit private routes when user is Log In. If user is not
   Logged in then the private routes will redirects him to Login page for Log in.
 
-#### Homepage
+#### Details About Homepage:
 
 - Homepage Banner: I have create the banner with swiper slider. It has some
   house pictures with banner title. It also has two button named "Buy", "Rent".
@@ -79,7 +79,7 @@
   Property". if user click on this button it will redirect to a new page and
   user can see the property estates.
 
-#### Update Profile
+#### Update Profile:
 
 - This page is private so only logged in user can see this page otherwise it
   will redirect to login page. In this page user can see his profile and he can

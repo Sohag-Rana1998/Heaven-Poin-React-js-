@@ -1,12 +1,6 @@
 import PropTypes from 'prop-types';
 
-import {
-  Card,
-  CardHeader,
-  CardBody,
-  Typography,
-  Button,
-} from '@material-tailwind/react';
+import { CardHeader, CardBody, Typography } from '@material-tailwind/react';
 import { FaLocationDot } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
 import 'animate.css';
@@ -44,11 +38,7 @@ const SingleProperty = ({ estate }) => {
             </button>
 
             <p className="absolute bottom-0 left-0 bg-black bg-opacity-50 p-2 rounded-t-lg ">
-              <Typography
-                variant="lead"
-                color="white"
-                className=" font-sm text-sm flex items-center gap-2"
-              >
+              <Typography className="text-white font-sm text-sm flex items-center gap-2">
                 <FaLocationDot />
                 {location}
               </Typography>
@@ -57,28 +47,22 @@ const SingleProperty = ({ estate }) => {
         </CardHeader>
         <CardBody className="px-3 h-auto md:h-[380px] m-0 ">
           <div className="flex h-full flex-col justify-between">
-            <Typography variant="h4" color="blue-gray">
-              {estate_title?.slice(0, 28)}
-            </Typography>
+            <Typography variant="h4">{estate_title?.slice(0, 28)}</Typography>
             <div>
-              <Typography className=" font-semibold">{segment_name}</Typography>
-              <Typography className=" font-semibold text-lg">
+              <Typography className="font-semibold">{segment_name}</Typography>
+              <Typography className="font-semibold text-lg">
                 <span className="font-bold">Area:</span>
                 {area}
               </Typography>
             </div>
 
-            <Typography color="gray" className="mt-1">
+            <Typography className="mt-1">
               {description?.slice(0, 100)}......
             </Typography>
 
             <div className="flex flex-col md:flex-row  justify-between gap-2 mt-1">
               <div className="w-full ">
-                <Typography
-                  variant="lead"
-                  color="black"
-                  className=" font-sm text-sm flex gap-2 "
-                >
+                <Typography className=" font-sm text-sm flex gap-2 ">
                   <span className="font-bold">Facilities: </span>
                   <div className="">
                     {facilities?.map((facility, indx) => (
