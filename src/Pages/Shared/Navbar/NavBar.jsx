@@ -49,20 +49,6 @@ const NavBar = () => {
         </NavLink>
       </li>
 
-      <li>
-        <NavLink
-          to="/update-profile"
-          className={({ isActive, isPending }) =>
-            isActive
-              ? 'border-2  font-bold text-blue-600 border-blue-600'
-              : isPending
-              ? 'pending'
-              : ''
-          }
-        >
-          Update Your Profile
-        </NavLink>
-      </li>
       {user ? (
         <li>
           <NavLink
@@ -81,6 +67,22 @@ const NavBar = () => {
       ) : (
         ''
       )}
+
+      <li>
+        <NavLink
+          to="/update-profile"
+          className={({ isActive, isPending }) =>
+            isActive
+              ? 'border-2  font-bold text-blue-600 border-blue-600'
+              : isPending
+              ? 'pending'
+              : ''
+          }
+        >
+          Update Profile
+        </NavLink>
+      </li>
+
       <li>
         <NavLink
           to="/contact-us"
@@ -131,7 +133,7 @@ const NavBar = () => {
                       onMouseEnter={handleHover}
                       onMouseLeave={handleLeave}
                       src={user && user?.photoURL}
-                      className="mr-4 cursor-pointer bg-no-repeat bg-contain bg-[url(https://i.ibb.co/zmbRY07/images.png)]"
+                      className="mr-4 cursor-pointer bg-no-repeat bg-cover bg-[url(https://i.ibb.co/zmbRY07/images.png)]"
                     />
                     <button
                       onClick={handleLogout}
@@ -140,7 +142,7 @@ const NavBar = () => {
                       Log Out
                     </button>
                     {type ? (
-                      <div className="w-auto bg-black bg-opacity-40 z-10 absolute py-4 px-5 rounded-2xl top-16 right-20 ">
+                      <div className="w-auto bg-black bg-opacity-40 z-10 absolute py-4 px-5 rounded-2xl top-16 right-16 ">
                         <div>
                           <h2 className="w-full text-white font-bold text-xl">
                             {user?.displayName || ''}
@@ -181,7 +183,7 @@ const NavBar = () => {
                 onMouseEnter={handleHover}
                 onMouseLeave={handleLeave}
                 src={user && user?.photoURL}
-                className="mr-4 cursor-pointer bg-no-repeat bg-contain bg-[url(https://i.ibb.co/zmbRY07/images.png)]"
+                className="mr-4 cursor-pointer bg-no-repeat bg-cover bg-[url(https://i.ibb.co/zmbRY07/images.png)]"
               />
               <button
                 onClick={handleLogout}
@@ -190,7 +192,7 @@ const NavBar = () => {
                 Log Out
               </button>
               {type ? (
-                <div className="w-auto bg-black bg-opacity-40 z-10 absolute py-4 px-5 rounded-2xl top-16 right-20 ">
+                <div className="w-auto bg-black bg-opacity-40 z-10 absolute py-3 px-5 rounded-2xl top-16 right-20 ">
                   <div>
                     <h2 className="w-full text-white font-bold text-xl">
                       {user?.displayName || ''}

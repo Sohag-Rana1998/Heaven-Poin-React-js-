@@ -85,8 +85,7 @@ const Register = () => {
         console.error(error);
         Swal.fire({
           icon: 'error',
-          title:
-            'Something went wrong. Please provide a registered email and password.',
+          title: 'Something went wrong. Please try again.',
           showConfirmButton: true,
         });
       });
@@ -108,8 +107,7 @@ const Register = () => {
         console.error(error);
         Swal.fire({
           icon: 'error',
-          title:
-            'Something went wrong. Please provide a registered email and password.',
+          title: 'Something went wrong. Please try again.',
           showConfirmButton: true,
         });
       });
@@ -126,7 +124,7 @@ const Register = () => {
   ) : (
     <div className="flex flex-col justify-between items-center">
       <Helmet>
-        <title>Residence Hub | Register</title>
+        <title>RESIDENCE HUB | Register</title>
       </Helmet>
       <div className="flex flex-col  max-w-lg w-full p-5 md:p-16 rounded-md  bg-green-100 border-2 my-5 shadow-xl border-purple-200 text-gray-800">
         <div className="mb-4 text-center">

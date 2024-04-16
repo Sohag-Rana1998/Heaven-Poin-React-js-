@@ -1,4 +1,4 @@
-import logo from '../../../../public/home_553416.png';
+import logo from '/home_553416.png';
 import { Typography } from '@material-tailwind/react';
 import {
   FaFacebook,

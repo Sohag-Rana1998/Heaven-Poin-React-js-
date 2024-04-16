@@ -16,7 +16,7 @@ const UserProfile = () => {
   ) : (
     <div className="max-w-5xl animate__animated animate__zoomIn   mx-auto  my-16 bg-white shadow-xl rounded-lg text-gray-900">
       <Helmet>
-        <title>Residence Hub | User Profile</title>
+        <title>RESIDENCE HUB | User Profile</title>
       </Helmet>
       <div className="rounded-t-lg h-32 overflow-hidden">
         <img
@@ -28,9 +28,9 @@ const UserProfile = () => {
       <div className="mx-auto w-32 h-32 relative -mt-16 border-4 border-white rounded-full overflow-hidden">
         <img className="object-cover object-center h-32" src={user?.photoURL} />
       </div>
-      <div className="text-center mt-2">
-        <h2 className="font-semibold">{user?.displayName}</h2>
-        <p className="text-gray-500">{user?.email}</p>
+      <div className="w-full px-4 md:w-1/4 mx-auto mt-2">
+        <h2 className="font-semibold">Name:{user?.displayName}</h2>
+        <p className=" font-semibold">Email:{user?.email}</p>
       </div>
 
       <div className="p-4 border-t  mt-2">

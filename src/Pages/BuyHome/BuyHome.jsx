@@ -30,7 +30,7 @@ const BuyHome = () => {
   ) : (
     <div className="my-5">
       <Helmet>
-        <title>Residence Hub || Buy House</title>
+        <title>RESIDENCE HUB || Buy House</title>
       </Helmet>
       <div>
         <div className="h-[150px] w-full rounded-xl bg-[url(https://i.ibb.co/PtcPs7P/6.jpg)] text-center mb-10  bg-no-repeat bg-center bg-opacity-10">

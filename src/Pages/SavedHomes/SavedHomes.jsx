@@ -25,7 +25,7 @@ const SavedHomes = () => {
   ) : (
     <div className="my-10  min-h-screen h-full">
       <Helmet>
-        <title>Residence Hub || Saved Homes</title>
+        <title>RESIDENCE HUB || Saved Homes</title>
       </Helmet>
       <div>
         {/* animate__animated animate__fadeInLeft */}

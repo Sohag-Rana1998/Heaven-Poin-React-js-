@@ -14,6 +14,7 @@ const UpdateProfile = () => {
   const auth = getAuth(app);
   const [name, setName] = useState('');
   const [photo, setPhoto] = useState('');
+
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -25,12 +26,6 @@ const UpdateProfile = () => {
     setTimeout(setLoading, 500, false);
   }, []);
 
-  const onChangeName = e => {
-    e.preventDefault();
-    const newName = e.target.value;
-    console.log(newName);
-    setName(newName);
-  };
   const onChangePhoto = e => {
     e.preventDefault();
     const newPhoto = e.target.value;
@@ -59,7 +54,7 @@ const UpdateProfile = () => {
     return (
       <div className="container text-black mx-auto my-10 flex flex-col lg:flex-row gap-10 justify-between p-5 bg-slate-200 border-2 border-gray-400 rounded-3xl h-auto">
         <Helmet>
-          <title>Residence Hub | Update Your Profile</title>
+          <title>RESIDENCE HUB | Update Profile</title>
         </Helmet>
         <div className="w-full lg:w-[50%]">
           <div className=" animate__animated animate__fadeInDown">
@@ -84,7 +79,6 @@ const UpdateProfile = () => {
                 {user?.displayName || ''}
               </h2>
               <h2 className="text-xl">
-                {' '}
                 <span className="font-bold text-nowrap">User Email:</span>{' '}
                 {user?.email || 'Not Found'}
               </h2>
@@ -104,7 +98,6 @@ const UpdateProfile = () => {
                   type="text"
                   className="input w-full bg-gray-300 mb-3 "
                   value={name}
-                  onChange={e => onChangeName(e)}
                 />
               </div>
               <div>
@@ -114,6 +107,14 @@ const UpdateProfile = () => {
                   className="input bg-gray-300 w-full mb-3 "
                   value={photo}
                   onChange={e => onChangePhoto(e)}
+                />
+              </div>
+              <div>
+                <h2> Your Email:(You cannot change your email now)</h2>
+                <input
+                  type="email"
+                  className="input bg-gray-300 w-full mb-3 "
+                  value={user?.email || ''}
                 />
               </div>
 

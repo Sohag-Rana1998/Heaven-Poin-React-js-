@@ -38,7 +38,7 @@ const ContactUs = () => {
   ) : (
     <div>
       <Helmet>
-        <title>Residence Hub | Contact Us</title>
+        <title>RESIDENCE HUB | Contact Us</title>
       </Helmet>
       <div>
         <div className="animate__animated animate__fadeInDown w-full rounded-xl bg-[url(https://i.ibb.co/n0c4YZq/customercare.jpg)] bg-cover text-center mb-10  bg-no-repeat bg-center bg-opacity-10  ">
