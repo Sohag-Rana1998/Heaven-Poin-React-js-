@@ -24,6 +24,7 @@ const Home = () => {
       <Banner></Banner>
       <Estates></Estates>
       <Agents></Agents>
+
       <Testimonial></Testimonial>
       <ScrollRestoration />
     </div>

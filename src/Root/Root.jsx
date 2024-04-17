@@ -10,11 +10,11 @@ AOS.init();
 
 const Root = () => {
   return (
-    <div className="max-w-[1500px] px-3 container mx-auto flex flex-col justify-between min-h-screen">
+    <div className="max-w-[1500px]  container mx-auto flex flex-col justify-between min-h-screen">
       <Helmet>
         <title>RESIDENCE HUB</title>
       </Helmet>
-      <div className="max-w-7xl  container mx-auto">
+      <div className="max-w-7xl px-4  container mx-auto">
         <div className="">
           <NavBar></NavBar>
         </div>

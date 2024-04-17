@@ -86,11 +86,7 @@ const AuthProvider = ({ children }) => {
     handleUpdateProfile,
   };
 
-  return loading ? (
-    <div className="w-full min-h-screen flex justify-center items-center">
-      <span className="loading loading-spinner loading-lg"></span>
-    </div>
-  ) : (
+  return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
   );
 };

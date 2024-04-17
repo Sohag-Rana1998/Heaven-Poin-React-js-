@@ -34,7 +34,7 @@ const Agents = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-5">
         <Card
-          data-aos="flip-right"
+          data-aos="zoom-in"
           data-aos-duration="1000"
           className="mt-6  w-full rounded-2xl  "
         >
@@ -77,7 +77,7 @@ const Agents = () => {
           </CardFooter>
         </Card>
         <Card
-          data-aos="flip-down"
+          data-aos="zoom-in"
           data-aos-duration="1000"
           className="mt-6 w-full"
         >
@@ -120,9 +120,9 @@ const Agents = () => {
           </CardFooter>
         </Card>
         <Card
-          data-aos="flip-left"
+          data-aos="zoom-in"
           data-aos-duration="1000"
-          className="mt-6 w-full px-3"
+          className="mt-6 w-full "
         >
           <div className=" w-full rounded-2xl h-56">
             <img

@@ -125,13 +125,12 @@ const NavBar = () => {
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
             {Links}
-            <div className="navbar-end">
+            <div className="navbar-end mt-2 ">
               <div className=" ">
                 {user ? (
                   <div className="">
                     <Avatar
-                      onMouseEnter={handleHover}
-                      onMouseLeave={handleLeave}
+                      title={user?.displayName || ''}
                       src={user && user?.photoURL}
                       className="mr-4 cursor-pointer bg-no-repeat bg-cover bg-[url(https://i.ibb.co/zmbRY07/images.png)]"
                     />

@@ -117,8 +117,9 @@ const UpdateProfile = () => {
                 />
               </div>
               <div>
-                <h2> Your Email:(You cannot change your email now)</h2>
+                <h2> Your Email:</h2>
                 <input
+                  disabled
                   type="email"
                   className="input bg-gray-300 w-full mb-3 "
                   value={user?.email || 'Not Found'}

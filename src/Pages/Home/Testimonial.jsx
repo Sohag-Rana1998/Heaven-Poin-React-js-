@@ -32,11 +32,11 @@ const Testimonial = () => {
       <div
         // data-aos="fade-down"
         // data-aos-duration="1000"
-        className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-10"
+        className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-8"
       >
         {testimonials?.map(test => (
-          <Card key={test.id} className="container mx-auto">
-            <div className="p-5 hover:scale-[110%] duration-500 rounded-lg flex flex-col justify-center items-center bg-slate-100 shadow-lg">
+          <Card key={test.id} className="container mx-auto ">
+            <div className="p-5 hover:scale-[105%] md:hover:scale-[110%] duration-500 rounded-lg flex flex-col justify-center items-center bg-slate-100 shadow-lg">
               <Avatar src={test.img} alt="image" size="xl" />
               <Typography variant="h6" className="mt-2">
                 {test.author}
