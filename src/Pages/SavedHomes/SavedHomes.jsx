@@ -1,11 +1,11 @@
-import { CardHeader, CardBody, Typography } from '@material-tailwind/react';
+import { CardHeader, CardBody, Typography } from "@material-tailwind/react";
 
-import { Helmet } from 'react-helmet-async';
-import { FaLocationDot } from 'react-icons/fa6';
-import { Link, ScrollRestoration } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { Helmet } from "react-helmet-async";
+import { FaLocationDot } from "react-icons/fa6";
+import { Link, ScrollRestoration } from "react-router-dom";
+import { useEffect, useState } from "react";
 const SavedHomes = () => {
-  const Homes = JSON.parse(localStorage.getItem('homes') || '[]');
+  const Homes = JSON.parse(localStorage.getItem("homes") || "[]");
 
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -19,7 +19,7 @@ const SavedHomes = () => {
   ) : (
     <div className="my-10  min-h-screen h-full">
       <Helmet>
-        <title>RESIDENCE HUB || Saved Homes</title>
+        <title>Heaven Point || Saved Homes</title>
       </Helmet>
       <div>
         {/* animate__animated animate__fadeInLeft */}
@@ -34,7 +34,7 @@ const SavedHomes = () => {
       {Homes && Homes.length > 0 ? (
         <>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {Homes.map(house => (
+            {Homes.map((house) => (
               <div key={house.id} className="w-full h-full">
                 <div className="w-full  h-full  rounded-2xl shadow-2xl  overflow-hidden">
                   <CardHeader
@@ -102,7 +102,7 @@ const SavedHomes = () => {
               on the button below.
             </h1>
 
-            <Link to={'/property-estate'}>
+            <Link to={"/property-estate"}>
               <button className="btn bg-blue-600">Add Property</button>
             </Link>
           </div>

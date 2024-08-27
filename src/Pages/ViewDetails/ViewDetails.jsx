@@ -1,22 +1,22 @@
-import { Button, Card, CardBody, Typography } from '@material-tailwind/react';
-import { useEffect, useState } from 'react';
-import { Helmet } from 'react-helmet-async';
-import { FaLocationDot } from 'react-icons/fa6';
-import { ScrollRestoration, useLoaderData, useParams } from 'react-router-dom';
-import { toast } from 'react-toastify';
-import { useRef } from 'react';
+import { Button, Card, CardBody, Typography } from "@material-tailwind/react";
+import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
+import { FaLocationDot } from "react-icons/fa6";
+import { ScrollRestoration, useLoaderData, useParams } from "react-router-dom";
+import { toast } from "react-toastify";
+import { useRef } from "react";
 // Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
-import '../..//styles.css';
+import "../..//styles.css";
 
 // import required modules
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 const ViewDetails = () => {
   const { id } = useParams();
@@ -24,35 +24,35 @@ const ViewDetails = () => {
   const [estate, setEstate] = useState({});
 
   useEffect(() => {
-    const singleData = data.find(property => property.id == id);
+    const singleData = data.find((property) => property.id == id);
 
     setEstate(singleData);
   }, [id, data]);
 
-  const savedHomes = JSON.parse(localStorage.getItem('homes') || '[]');
+  const savedHomes = JSON.parse(localStorage.getItem("homes") || "[]");
 
   const [Homes, setHomes] = useState(savedHomes);
 
-  const handleSavedHomes = home => {
-    const isExist = Homes.find(house => house.id === home.id);
+  const handleSavedHomes = (home) => {
+    const isExist = Homes.find((house) => house.id === home.id);
     if (!isExist) {
       setHomes([...Homes, home]);
 
-      toast.success('Successfully Saved On Your Saved List.');
+      toast.success("Successfully Saved On Your Saved List.");
     } else {
-      toast.warn('Already Saved On Your Saved List.');
+      toast.warn("Already Saved On Your Saved List.");
     }
   };
   console.log(Homes);
 
   useEffect(() => {
-    localStorage.setItem('homes', JSON.stringify(Homes));
+    localStorage.setItem("homes", JSON.stringify(Homes));
   }, [Homes]);
 
   const progressCircle = useRef(null);
   const progressContent = useRef(null);
   const onAutoplayTimeLeft = (s, time, progress) => {
-    progressCircle.current.style.setProperty('--progress', 1 - progress);
+    progressCircle.current.style.setProperty("--progress", 1 - progress);
     progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
   };
 
@@ -80,7 +80,7 @@ const ViewDetails = () => {
   ) : (
     <div className="my-8 md:my-16">
       <Helmet>
-        <title>RESIDENCE HUB | Details </title>
+        <title>Heaven Point | Details </title>
       </Helmet>
 
       <div className="h-[150px]  animate__animated animate__fadeInDown w-full rounded-xl bg-[url(https://i.ibb.co/PtcPs7P/6.jpg)] text-center mb-10  bg-no-repeat bg-center bg-opacity-10">
@@ -119,7 +119,7 @@ const ViewDetails = () => {
               className="mySwiper h-[500px]  rounded-2xl"
             >
               <SwiperSlide>
-                {' '}
+                {" "}
                 <img
                   src={image_url}
                   alt="image 1"

@@ -1,25 +1,25 @@
-import logo from '/home_553416.png';
-import { Typography } from '@material-tailwind/react';
+import logo from "/home_553416.png";
+import { Typography } from "@material-tailwind/react";
 import {
   FaFacebook,
   FaGithub,
   FaInstagram,
   FaLinkedin,
   FaTwitter,
-} from 'react-icons/fa6';
+} from "react-icons/fa6";
 
 const SITEMAP = [
   {
-    title: 'Company',
-    links: ['About Us', 'Careers', 'Our Team', 'Projects'],
+    title: "Company",
+    links: ["About Us", "Careers", "Our Team", "Projects"],
   },
   {
-    title: 'Help Center',
-    links: ['Discord', 'Twitter', 'GitHub', 'Contact Us'],
+    title: "Help Center",
+    links: ["Discord", "Twitter", "GitHub", "Contact Us"],
   },
   {
-    title: 'Resources',
-    links: ['Blog', 'Newsletter', 'Free Products', 'Affiliate Program'],
+    title: "Resources",
+    links: ["Blog", "Newsletter", "Free Products", "Affiliate Program"],
   },
 ];
 
@@ -33,7 +33,7 @@ const Footer = () => {
           <div className="flex flex-col lg:flex-row justify-between items-center text-center ">
             <div className="text-3xl flex flex-col items-center font-bold text-light-blue-600">
               <img className="w-24 h-24" src={logo} alt="" />
-              <h2> RESIDENCE HUB</h2>
+              <h2> Heaven Point</h2>
             </div>
             <div className="mx-auto grid w-full grid-cols-1 gap-8 py-12 md:grid-cols-2 lg:grid-cols-3">
               {SITEMAP.map(({ title, links }, key) => (
@@ -71,8 +71,8 @@ const Footer = () => {
               variant="small"
               className="mb-4 text-center font-normal text-white md:mb-0"
             >
-              &copy; {currentYear}{' '}
-              <a href="https://material-tailwind.com/">RESIDENCE HUB</a>. All
+              &copy; {currentYear}{" "}
+              <a href="https://material-tailwind.com/">Heaven Point</a>. All
               Rights Reserved.
             </Typography>
             <div className="flex gap-4 text-white sm:justify-center">
@@ -95,7 +95,7 @@ const Footer = () => {
                 href="#"
                 className="opacity-80 text-2xl font-bold transition-opacity hover:opacity-100"
               >
-                {' '}
+                {" "}
                 <FaGithub></FaGithub>
               </Typography>
               <Typography

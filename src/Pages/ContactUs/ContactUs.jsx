@@ -1,15 +1,15 @@
-import { FaHome, FaPhoneAlt } from 'react-icons/fa';
-import { MdEmail } from 'react-icons/md';
-import { Button } from '@material-tailwind/react';
-import { MapContainer, Marker, Popup, TileLayer, Tooltip } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
-import { Icon } from 'leaflet';
-import { useEffect, useState } from 'react';
-import { Helmet } from 'react-helmet-async';
-import Swal from 'sweetalert2';
+import { FaHome, FaPhoneAlt } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
+import { Button } from "@material-tailwind/react";
+import { MapContainer, Marker, Popup, TileLayer, Tooltip } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
+import { Icon } from "leaflet";
+import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
+import Swal from "sweetalert2";
 const ContactUs = () => {
   const markerIcon = new Icon({
-    iconUrl: '/location-2955 (1).png',
+    iconUrl: "/location-2955 (1).png",
     iconSize: [45, 45],
   });
 
@@ -23,8 +23,8 @@ const ContactUs = () => {
     setTimeout(() => {
       setTimeout(setLoading, 500, false);
       Swal.fire({
-        icon: 'success',
-        title: 'Message Sent Successfully',
+        icon: "success",
+        title: "Message Sent Successfully",
         showConfirmButton: false,
         timer: 1500,
       });
@@ -38,7 +38,7 @@ const ContactUs = () => {
   ) : (
     <div>
       <Helmet>
-        <title>RESIDENCE HUB | Contact Us</title>
+        <title>Heaven Point | Contact Us</title>
       </Helmet>
       <div>
         <div className="animate__animated animate__fadeInDown w-full rounded-xl bg-[url(https://i.ibb.co/n0c4YZq/customercare.jpg)] bg-cover text-center mb-10  bg-no-repeat bg-center bg-opacity-10  ">

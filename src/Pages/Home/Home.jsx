@@ -1,11 +1,11 @@
-import { Helmet } from 'react-helmet-async';
-import Agents from './Agents';
+import { Helmet } from "react-helmet-async";
+import Agents from "./Agents";
 
-import Estates from './Estates/Estates';
-import Testimonial from './Testimonial';
-import { ScrollRestoration } from 'react-router-dom';
-import Banner from './Banner/Banner';
-import { useEffect, useState } from 'react';
+import Estates from "./Estates/Estates";
+import Testimonial from "./Testimonial";
+import { ScrollRestoration } from "react-router-dom";
+import Banner from "./Banner/Banner";
+import { useEffect, useState } from "react";
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
@@ -19,7 +19,7 @@ const Home = () => {
   ) : (
     <div className="my-10">
       <Helmet>
-        <title className="uppercase">RESIDENCE HUB | Home</title>
+        <title className="uppercase">Heaven Point | Home</title>
       </Helmet>
       <Banner></Banner>
       <Estates></Estates>

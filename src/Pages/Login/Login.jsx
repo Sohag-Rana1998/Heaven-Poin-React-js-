@@ -3,16 +3,16 @@ import {
   ScrollRestoration,
   useLocation,
   useNavigate,
-} from 'react-router-dom';
+} from "react-router-dom";
 
-import { Button } from '@material-tailwind/react';
-import { Helmet } from 'react-helmet-async';
-import { useContext, useEffect, useState } from 'react';
-import { IoEye, IoEyeOff } from 'react-icons/io5';
-import { AuthContext } from '../../AuthProvider/AuthProvider';
-import { reload } from 'firebase/auth';
-import Swal from 'sweetalert2';
-import { FaGithub } from 'react-icons/fa6';
+import { Button } from "@material-tailwind/react";
+import { Helmet } from "react-helmet-async";
+import { useContext, useEffect, useState } from "react";
+import { IoEye, IoEyeOff } from "react-icons/io5";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { reload } from "firebase/auth";
+import Swal from "sweetalert2";
+import { FaGithub } from "react-icons/fa6";
 
 const Login = () => {
   const [type, setType] = useState(false);
@@ -21,7 +21,7 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
   console.log(location);
-  const handleLogIn = e => {
+  const handleLogIn = (e) => {
     e.preventDefault();
 
     const email = e.target.email.value;
@@ -29,71 +29,71 @@ const Login = () => {
     console.log(email, password);
 
     signInWithEmail(email, password)
-      .then(result => {
+      .then((result) => {
         console.log(result.user);
         reload();
 
         Swal.fire({
-          icon: 'success',
-          title: 'Log In successful',
+          icon: "success",
+          title: "Log In successful",
           showConfirmButton: false,
           timer: 1500,
         });
 
-        navigate(location?.state || '/');
+        navigate(location?.state || "/");
       })
-      .catch(error => {
+      .catch((error) => {
         console.error(error);
         Swal.fire({
-          icon: 'error',
+          icon: "error",
           title:
-            'Something went wrong. Please provide a registered email and password.',
+            "Something went wrong. Please provide a registered email and password.",
           showConfirmButton: true,
         });
       });
   };
   const handleGoogleLogin = () => {
     signInWithGoogle()
-      .then(result => {
+      .then((result) => {
         console.log(result.user);
 
-        navigate(location?.state || '/');
+        navigate(location?.state || "/");
         Swal.fire({
-          icon: 'success',
-          title: 'Log In successful',
+          icon: "success",
+          title: "Log In successful",
           showConfirmButton: false,
           timer: 1500,
         });
       })
-      .catch(error => {
+      .catch((error) => {
         console.error(error);
         Swal.fire({
-          icon: 'error',
+          icon: "error",
           title:
-            'Something went wrong. Please provide a registered email and password.',
+            "Something went wrong. Please provide a registered email and password.",
           showConfirmButton: true,
         });
       });
   };
   const handleGithubLogin = () => {
     signInWithGithub()
-      .then(result => {
+      .then((result) => {
         console.log(result.user);
 
-        navigate(location?.state || '/');
+        navigate(location?.state || "/");
         Swal.fire({
-          icon: 'success',
-          title: 'Log In successful',
+          icon: "success",
+          title: "Log In successful",
           showConfirmButton: false,
           timer: 1500,
         });
       })
-      .catch(error => {
+      .catch((error) => {
         console.error(error);
         Swal.fire({
-          icon: 'error',
+          icon: "error",
           title:
-            'Something went wrong. Please provide a registered email and password.',
+            "Something went wrong. Please provide a registered email and password.",
           showConfirmButton: true,
         });
       });
@@ -110,7 +110,7 @@ const Login = () => {
   ) : (
     <div className="flex flex-col  justify-between items-center ">
       <Helmet>
-        <title>RESIDENCE HUB || Login</title>
+        <title>Heaven Point || Login</title>
       </Helmet>
       <div className="flex flex-col max-w-lg container p-5 md:p-20 rounded-md   bg-slate-100 border-2 my-5 shadow-xl border-purple-200 text-gray-800">
         <div className="mb-4 text-center">
@@ -154,7 +154,7 @@ const Login = () => {
               </div>
               <div className="relative">
                 <input
-                  type={type ? 'text' : 'password'}
+                  type={type ? "text" : "password"}
                   name="password"
                   id="password"
                   placeholder="password"
@@ -170,7 +170,7 @@ const Login = () => {
                   ) : (
                     <IoEyeOff className="text-2xl" />
                   )}
-                </span>{' '}
+                </span>{" "}
               </div>
             </div>
           </div>
@@ -184,7 +184,7 @@ const Login = () => {
             </div>
             <p className="px-6 text-sm text-center text-gray-600">
               Don&apos;t have an account yet?
-              <Link to={'/register'}>
+              <Link to={"/register"}>
                 <button
                   rel="noopener noreferrer"
                   href="#"

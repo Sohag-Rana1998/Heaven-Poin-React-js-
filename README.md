@@ -1,4 +1,4 @@
-# RESIDENCE HUB
+# Heaven Point (React js)
 
 ## Website Live Link: https://residence-hub-bd1b4.web.app/
 

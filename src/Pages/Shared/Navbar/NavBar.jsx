@@ -1,7 +1,7 @@
-import { Avatar } from '@material-tailwind/react';
-import { useContext, useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
-import { AuthContext } from '../../../AuthProvider/AuthProvider';
+import { Avatar } from "@material-tailwind/react";
+import { useContext, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../../AuthProvider/AuthProvider";
 
 const NavBar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -25,10 +25,10 @@ const NavBar = () => {
           to="/"
           className={({ isActive, isPending }) =>
             isActive
-              ? 'border-2 font-bold text-blue-600 border-blue-600'
+              ? "border-2 font-bold text-blue-600 border-blue-600"
               : isPending
-              ? 'pending'
-              : ''
+              ? "pending"
+              : ""
           }
         >
           Home
@@ -39,10 +39,10 @@ const NavBar = () => {
           to="/saved-homes"
           className={({ isActive, isPending }) =>
             isActive
-              ? 'border-2 font-bold text-blue-600 border-blue-600'
+              ? "border-2 font-bold text-blue-600 border-blue-600"
               : isPending
-              ? 'pending'
-              : ''
+              ? "pending"
+              : ""
           }
         >
           Saved Homes
@@ -55,17 +55,17 @@ const NavBar = () => {
             to="/user-profile"
             className={({ isActive, isPending }) =>
               isActive
-                ? 'border-2 font-bold text-blue-600 border-blue-600'
+                ? "border-2 font-bold text-blue-600 border-blue-600"
                 : isPending
-                ? 'pending'
-                : ''
+                ? "pending"
+                : ""
             }
           >
             User Profile
           </NavLink>
         </li>
       ) : (
-        ''
+        ""
       )}
 
       <li>
@@ -73,10 +73,10 @@ const NavBar = () => {
           to="/update-profile"
           className={({ isActive, isPending }) =>
             isActive
-              ? 'border-2  font-bold text-blue-600 border-blue-600'
+              ? "border-2  font-bold text-blue-600 border-blue-600"
               : isPending
-              ? 'pending'
-              : ''
+              ? "pending"
+              : ""
           }
         >
           Update Profile
@@ -88,10 +88,10 @@ const NavBar = () => {
           to="/contact-us"
           className={({ isActive, isPending }) =>
             isActive
-              ? 'border-2  font-bold text-blue-600 border-blue-600'
+              ? "border-2  font-bold text-blue-600 border-blue-600"
               : isPending
-              ? 'pending'
-              : ''
+              ? "pending"
+              : ""
           }
         >
           Contact Us
@@ -130,8 +130,11 @@ const NavBar = () => {
                 {user ? (
                   <div className="">
                     <Avatar
-                      title={user?.displayName || ''}
-                      src={user && user?.photoURL}
+                      title={user?.displayName || ""}
+                      src={
+                        (user && user?.photoURL) ||
+                        "https://i.ibb.co/zmbRY07/images.png"
+                      }
                       className="mr-4 cursor-pointer bg-no-repeat bg-cover bg-[url(https://i.ibb.co/zmbRY07/images.png)]"
                     />
                     <button
@@ -144,17 +147,17 @@ const NavBar = () => {
                       <div className="w-auto bg-black bg-opacity-40 z-10 absolute py-4 px-5 rounded-2xl top-16 right-16 ">
                         <div>
                           <h2 className="w-full text-white font-bold text-xl">
-                            {user?.displayName || ''}
+                            {user?.displayName || ""}
                           </h2>
                         </div>
                       </div>
                     ) : (
-                      ''
+                      ""
                     )}
                   </div>
                 ) : (
-                  <Link to={'/login'}>
-                    {' '}
+                  <Link to={"/login"}>
+                    {" "}
                     <button className="btn bg-blue-600 w-full mr-3 text-white">
                       Log In
                     </button>
@@ -164,9 +167,9 @@ const NavBar = () => {
             </div>
           </ul>
         </div>
-        <Link to={'/'}>
+        <Link to={"/"}>
           <button className="btn btn-ghost  w-52 text-xl font-bold text-blue-600">
-            RESIDENCE HUB
+            Heaven Point
           </button>
         </Link>
       </div>
@@ -181,7 +184,10 @@ const NavBar = () => {
               <Avatar
                 onMouseEnter={handleHover}
                 onMouseLeave={handleLeave}
-                src={user && user?.photoURL}
+                src={
+                  (user && user?.photoURL) ||
+                  "https://i.ibb.co/zmbRY07/images.png"
+                }
                 className="mr-4 cursor-pointer bg-no-repeat bg-cover bg-[url(https://i.ibb.co/zmbRY07/images.png)]"
               />
               <button
@@ -194,16 +200,16 @@ const NavBar = () => {
                 <div className="w-auto bg-black bg-opacity-40 z-10 absolute py-3 px-5 rounded-2xl top-16 right-20 ">
                   <div>
                     <h2 className="w-full text-white font-bold text-xl">
-                      {user?.displayName || ''}
+                      {user?.displayName || ""}
                     </h2>
                   </div>
                 </div>
               ) : (
-                ''
+                ""
               )}
             </div>
           ) : (
-            <Link to={'/login'}>
+            <Link to={"/login"}>
               <button className="btn bg-blue-600 mr-3 text-white">
                 Log In
               </button>

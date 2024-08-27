@@ -1,7 +1,7 @@
-import { useContext, useEffect, useState } from 'react';
-import { AuthContext } from '../../AuthProvider/AuthProvider';
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
-import { Helmet } from 'react-helmet-async';
+import { Helmet } from "react-helmet-async";
 
 const UserProfile = () => {
   const { user } = useContext(AuthContext);
@@ -16,7 +16,7 @@ const UserProfile = () => {
   ) : (
     <div className="max-w-5xl animate__animated animate__zoomIn   mx-auto  my-16 bg-white shadow-xl rounded-lg text-gray-900">
       <Helmet>
-        <title>RESIDENCE HUB | User Profile</title>
+        <title>Heaven Point | User Profile</title>
       </Helmet>
       <div className="rounded-t-lg h-32 overflow-hidden">
         <img
@@ -30,9 +30,9 @@ const UserProfile = () => {
       </div>
       <div className="w-full pl-2 md:pl-24  md:w-2/4 mx-auto mt-2">
         <h2 className="font-semibold">
-          Name:{user?.displayName || 'Not Found'}
+          Name:{user?.displayName || "Not Found"}
         </h2>
-        <p className=" font-semibold">Email: {user?.email || 'Not Found'}</p>
+        <p className=" font-semibold">Email: {user?.email || "Not Found"}</p>
       </div>
 
       <div className="p-4 border-t  mt-2">

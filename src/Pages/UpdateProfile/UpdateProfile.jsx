@@ -1,17 +1,17 @@
-import { useContext, useEffect, useState } from 'react';
-import { AuthContext } from '../../AuthProvider/AuthProvider';
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
-import { Helmet } from 'react-helmet-async';
+import { Helmet } from "react-helmet-async";
 
-import { ScrollRestoration } from 'react-router-dom';
+import { ScrollRestoration } from "react-router-dom";
 
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 
 const UpdateProfile = () => {
   const { user, handleUpdateProfile } = useContext(AuthContext);
 
-  const [name, setName] = useState('');
-  const [photo, setPhoto] = useState('');
+  const [name, setName] = useState("");
+  const [photo, setPhoto] = useState("");
 
   const [loader, setLoader] = useState(false);
 
@@ -24,14 +24,14 @@ const UpdateProfile = () => {
     setTimeout(setLoader, 500, false);
   }, []);
 
-  const onChangeName = e => {
+  const onChangeName = (e) => {
     e.preventDefault();
     const newName = e.target.value;
     console.log(newName);
     setName(newName);
   };
 
-  const onChangePhoto = e => {
+  const onChangePhoto = (e) => {
     e.preventDefault();
     const newPhoto = e.target.value;
     console.log(newPhoto);
@@ -43,8 +43,8 @@ const UpdateProfile = () => {
     handleUpdateProfile(name, photo);
     setTimeout(setLoader, 800, false);
     Swal.fire({
-      icon: 'success',
-      title: 'Profile Updated',
+      icon: "success",
+      title: "Profile Updated",
       showConfirmButton: false,
       timer: 1500,
     });
@@ -60,7 +60,7 @@ const UpdateProfile = () => {
     return (
       <div className="container text-black mx-auto my-10 flex flex-col lg:flex-row gap-10 justify-between p-5 bg-slate-200 border-2 border-gray-400 rounded-3xl h-auto">
         <Helmet>
-          <title>RESIDENCE HUB | Update Profile</title>
+          <title>Heaven Point | Update Profile</title>
         </Helmet>
         <div className="w-full lg:w-[50%]">
           <div className=" animate__animated animate__fadeInDown">
@@ -73,20 +73,20 @@ const UpdateProfile = () => {
               {user && (
                 <img
                   className="w-full h-full rounded-full"
-                  src={user?.photoURL}
+                  src={user?.photoURL || "https://i.ibb.co/zmbRY07/images.png"}
                   alt=""
                 />
               )}
             </div>
             <div className="space-y-3">
               <h2 className="text-xl">
-                {' '}
+                {" "}
                 <span className="font-bold">User Name:</span>
-                {user?.displayName || ''}
+                {user?.displayName || ""}
               </h2>
               <h2 className="text-xl">
-                <span className="font-bold text-nowrap">User Email:</span>{' '}
-                {user?.email || 'Not Found'}
+                <span className="font-bold text-nowrap">User Email:</span>{" "}
+                {user?.email || "Not Found"}
               </h2>
             </div>
           </div>
@@ -103,7 +103,7 @@ const UpdateProfile = () => {
                 <input
                   type="text"
                   className="input w-full bg-gray-300 mb-3 "
-                  onChange={e => onChangeName(e)}
+                  onChange={(e) => onChangeName(e)}
                   value={name}
                 />
               </div>
@@ -113,7 +113,7 @@ const UpdateProfile = () => {
                   type="text"
                   className="input bg-gray-300 w-full mb-3 "
                   value={photo}
-                  onChange={e => onChangePhoto(e)}
+                  onChange={(e) => onChangePhoto(e)}
                 />
               </div>
               <div>
@@ -122,7 +122,7 @@ const UpdateProfile = () => {
                   disabled
                   type="email"
                   className="input bg-gray-300 w-full mb-3 "
-                  value={user?.email || 'Not Found'}
+                  value={user?.email || "Not Found"}
                 />
               </div>
 

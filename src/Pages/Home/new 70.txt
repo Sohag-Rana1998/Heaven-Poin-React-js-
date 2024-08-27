@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Alice Johnson",
+        "designation": "Senior Recruiter",
+        "description": "Alice has over 10 years of experience in the recruitment industry. She specializes in IT and engineering roles, connecting top talent with leading companies. Her expertise in talent acquisition ensures that clients find the perfect candidates to drive their business forward.",
+        "image_url": "https://i.postimg.cc/d178BqNC/photo-smart-agent-guy-point-empty-space-thumb-hold-tablet-gadget-sales-isolated-pastel-color-backgro.webp"
+    },
+    {
+        "name": "Emily Smith",
+        "designation": "HR Consultant",
+        "description": "Emily is a seasoned HR consultant with a keen eye for identifying top talent. He has a background in corporate HR and is skilled in workforce planning, employee relations, and talent management. Emily is dedicated to helping businesses build effective and dynamic teams.",
+        "image_url": "https://i.postimg.cc/SNQcT7Pq/photo-young-attractive-business-woman-smart-agent-manager-ceo-chief-career-isolated-violet-color-bac.webp"
+    },
+    {
+        "name": "Sophia Brown",
+        "designation": "Talent Acquisition Specialist",
+        "description": "Sophia brings a wealth of knowledge in talent acquisition, focusing on creative industries and startups. Her proactive approach and extensive network help her find innovative and skilled professionals who are perfect matches for her clients' needs. Sophia excels in strategic hiring solutions.",
+        "image_url": "https://i.postimg.cc/tJJWT9WJ/photo-cheerful-young-girl-good-mood-confident-smart-agent-manager-leader-isolated-pink-color-backgro.webp"
+    },
+    {
+        "name": "David Lee",
+        "designation": "Recruitment Manager",
+        "description": "David has a robust background in managing recruitment processes across various sectors, including finance and healthcare. His strategic mindset and commitment to excellence ensure that each client receives personalized and effective recruitment services. David is known for his meticulous attention to detail.",
+        "image_url": "https://i.postimg.cc/6pnjwhBS/thoughtful-concentrated-indian-arabian-man-smart-businessman-office-manager-worker-ceo-agent-entrepr.webp"
+    },
+    {
+        "name": "Emily Clark",
+        "designation": "Executive Recruiter",
+        "description": "Emily specializes in executive recruitment, helping organizations find leadership talent that drives success. With a deep understanding of the executive landscape, she connects businesses with high-caliber professionals. Emily's strategic insights and dedicated approach make her a trusted partner in executive hiring.",
+        "image_url": "https://i.ibb.co/JjJXCY3/person3-500x328.webp"
+    }
+]

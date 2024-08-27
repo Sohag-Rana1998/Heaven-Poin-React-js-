@@ -1,15 +1,15 @@
-import { CardBody, CardHeader, Typography } from '@material-tailwind/react';
-import { useEffect, useState } from 'react';
-import { Helmet } from 'react-helmet-async';
-import { FaLocationDot } from 'react-icons/fa6';
-import { Link, ScrollRestoration, useLoaderData } from 'react-router-dom';
+import { CardBody, CardHeader, Typography } from "@material-tailwind/react";
+import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
+import { FaLocationDot } from "react-icons/fa6";
+import { Link, ScrollRestoration, useLoaderData } from "react-router-dom";
 
 const BuyHome = () => {
   const data = useLoaderData();
 
   const [sales, setSales] = useState([]);
   useEffect(() => {
-    const salesHouse = data.filter(house => house.status == 'Sale');
+    const salesHouse = data.filter((house) => house.status == "Sale");
     setSales(salesHouse);
   }, [data]);
 
@@ -24,7 +24,7 @@ const BuyHome = () => {
   ) : (
     <div className="my-5">
       <Helmet>
-        <title>RESIDENCE HUB || Buy House</title>
+        <title>Heaven Point || Buy House</title>
       </Helmet>
       <div>
         <div className="h-[150px] w-full rounded-xl bg-[url(https://i.ibb.co/PtcPs7P/6.jpg)] text-center mb-10  bg-no-repeat bg-center bg-opacity-10">
@@ -34,7 +34,7 @@ const BuyHome = () => {
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 ">
-        {sales?.map(house => (
+        {sales?.map((house) => (
           <div key={house.id}>
             <div className="w-full  h-full  rounded-2xl shadow-2xl  overflow-hidden">
               <CardHeader

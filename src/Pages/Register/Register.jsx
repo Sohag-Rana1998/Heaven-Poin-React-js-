@@ -1,22 +1,22 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from "react-router-dom";
 
-import 'react-toastify/dist/ReactToastify.css';
-import { Button } from '@material-tailwind/react';
-import { Helmet } from 'react-helmet-async';
-import { useContext, useEffect, useState } from 'react';
-import { AuthContext } from '../../AuthProvider/AuthProvider';
-import { ToastContainer, toast } from 'react-toastify';
-import { IoEye, IoEyeOff } from 'react-icons/io5';
-import { FaGithub } from 'react-icons/fa6';
-import Swal from 'sweetalert2';
-import { getAuth, updateProfile } from 'firebase/auth';
-import app from '../../FireBase/firebase.config';
+import "react-toastify/dist/ReactToastify.css";
+import { Button } from "@material-tailwind/react";
+import { Helmet } from "react-helmet-async";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { ToastContainer, toast } from "react-toastify";
+import { IoEye, IoEyeOff } from "react-icons/io5";
+import { FaGithub } from "react-icons/fa6";
+import Swal from "sweetalert2";
+import { getAuth, updateProfile } from "firebase/auth";
+import app from "../../FireBase/firebase.config";
 const Register = () => {
   const [type, setType] = useState(false);
   const { createUserByEmailAndPassword, signInWithGithub, signInWithGoogle } =
     useContext(AuthContext);
   const auth = getAuth(app);
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const name = e.target.name.value;
     const photo = e.target.photo.value;
@@ -24,13 +24,13 @@ const Register = () => {
     const password = e.target.password.value;
 
     if (!/[A-Z]/.test(password)) {
-      toast.warn('Your Password should have one uppercase letter.');
+      toast.warn("Your Password should have one uppercase letter.");
       return;
     } else if (!/[a-z]/.test(password)) {
-      toast.warn('Your Password should have one lowercase letter.');
+      toast.warn("Your Password should have one lowercase letter.");
       return;
     } else if (password.length < 6) {
-      toast.warn('Password Must be minimum 06 character.');
+      toast.warn("Password Must be minimum 06 character.");
       return;
     }
     console.log(name, email, photo, password);
@@ -44,22 +44,22 @@ const Register = () => {
           .then(() => {
             location.reload();
           })
-          .catch(error => {
+          .catch((error) => {
             console.error(error);
           });
 
-        navigate('/');
+        navigate("/");
 
         Swal.fire({
-          icon: 'success',
-          title: 'Congratulation! Your account is registered successfully',
+          icon: "success",
+          title: "Congratulation! Your account is registered successfully",
           showConfirmButton: true,
         });
       })
-      .catch(error => {
+      .catch((error) => {
         console.error(error.message);
         Swal.fire({
-          icon: 'error',
+          icon: "error",
           title: error.message,
           showConfirmButton: false,
           timer: 2000,
@@ -71,43 +71,43 @@ const Register = () => {
   console.log(navigate);
   const handleGoogleLogin = () => {
     signInWithGoogle()
-      .then(result => {
+      .then((result) => {
         console.log(result.user);
-        navigate('/');
+        navigate("/");
         Swal.fire({
-          icon: 'success',
-          title: 'Log In successful',
+          icon: "success",
+          title: "Log In successful",
           showConfirmButton: false,
           timer: 1500,
         });
       })
-      .catch(error => {
+      .catch((error) => {
         console.error(error);
         Swal.fire({
-          icon: 'error',
-          title: 'Something went wrong. Please try again.',
+          icon: "error",
+          title: "Something went wrong. Please try again.",
           showConfirmButton: true,
         });
       });
   };
   const handleGithubLogin = () => {
     signInWithGithub()
-      .then(result => {
+      .then((result) => {
         console.log(result.user);
-        navigate('/');
+        navigate("/");
 
         Swal.fire({
-          icon: 'success',
-          title: 'Log In successful',
+          icon: "success",
+          title: "Log In successful",
           showConfirmButton: false,
           timer: 1500,
         });
       })
-      .catch(error => {
+      .catch((error) => {
         console.error(error);
         Swal.fire({
-          icon: 'error',
-          title: 'Something went wrong. Please try again.',
+          icon: "error",
+          title: "Something went wrong. Please try again.",
           showConfirmButton: true,
         });
       });
@@ -124,7 +124,7 @@ const Register = () => {
   ) : (
     <div className="flex flex-col justify-between items-center">
       <Helmet>
-        <title>RESIDENCE HUB | Register</title>
+        <title>Heaven Point | Register</title>
       </Helmet>
       <div className="flex flex-col  max-w-lg w-full p-5 md:p-16 rounded-md  bg-green-100 border-2 my-5 shadow-xl border-purple-200 text-gray-800">
         <div className="mb-4 text-center">
@@ -171,7 +171,7 @@ const Register = () => {
                 id="email"
                 placeholder="Email address"
                 className="w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-50 text-gray-800"
-              />{' '}
+              />{" "}
             </div>
             <div>
               <div className="flex  justify-between mb-2">
@@ -188,7 +188,7 @@ const Register = () => {
               </div>
               <div className="relative">
                 <input
-                  type={type ? 'text' : 'password'}
+                  type={type ? "text" : "password"}
                   name="password"
                   id="password"
                   required
@@ -204,7 +204,7 @@ const Register = () => {
                   ) : (
                     <IoEyeOff className="text-2xl" />
                   )}
-                </span>{' '}
+                </span>{" "}
               </div>
             </div>
           </div>
@@ -218,8 +218,8 @@ const Register = () => {
             </div>
             <p className="px-6 text-sm text-center text-gray-600">
               Already have an account yet?
-              <Link to={'/login'}>
-                {' '}
+              <Link to={"/login"}>
+                {" "}
                 <button className="hover:underline font-bold text-xl text-blue-600">
                   Log In
                 </button>
