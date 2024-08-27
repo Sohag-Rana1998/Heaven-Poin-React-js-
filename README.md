@@ -1,15 +1,8 @@
 # Heaven Point (React js)
 
-## Website Live Link: https://residence-hub-bd1b4.web.app/
+## Website Live Link: https://heaven-point.netlify.app/
 
 ### Features and Characteristics Of My Website:
-
-##### Packages i have used:
-
-1. AOS Package,
-2. Animate.css,
-3. React-leaflet,
-4. Swiper slider.
 
 - I have used tailwind css for this project. Because tailwind css is much easier
   to use and easy to design and easy to make website responsive.
